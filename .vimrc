@@ -20,6 +20,7 @@ Plugin 'CaffeineViking/gruvbox'
 
 " Language:
 Plugin 'wting/rust.vim'
+Plugin 'jdonaldson/vaxe'
 
 call vundle#end()
 filetype plugin indent on
@@ -119,4 +120,7 @@ filetype plugin indent on
 " Misc: {
     let g:syntastic_cpp_compiler = 'g++'
     let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
+
+    let g:syntastic_c_compiler = 'gcc'
+    let g:syntastic_c_compiler_options = '-std=c11 -Wall -Wextra -pedantic'
 " }

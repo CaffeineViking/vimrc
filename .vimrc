@@ -21,6 +21,7 @@ Plugin 'CaffeineViking/gruvbox'
 " Language:
 Plugin 'wting/rust.vim'
 Plugin 'jdonaldson/vaxe'
+Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 filetype plugin indent on
@@ -99,7 +100,7 @@ filetype plugin indent on
     let g:tagbar_autofocus = 1
 
     if has("gui_running")
-        set guifont=SourceCodePro\ 11 " Nice programming font. Source_Code_Pro:h11 on Windows and OSX.
+        set guifont=SourceCodePro\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
         set guioptions=i " Will disable all nasty GUI toolbars on gvim.
     endif
 

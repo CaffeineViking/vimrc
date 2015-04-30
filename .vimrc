@@ -16,7 +16,7 @@ Plugin 'sjl/gundo.vim'
 " Pretty:
 Plugin 'mkitt/tabline.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'CaffeineViking/gruvbox'
+Plugin 'morhetz/gruvbox'
 
 " Language:
 Plugin 'wting/rust.vim'

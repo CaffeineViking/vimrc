@@ -3,11 +3,20 @@ vimrc
 
 Installation
 ------------
-Provided in this repository is an install script, first, the contents of this repository is downloaded to `~/.vim_temp`, it then creates a backup of your existing `~/.vimrc` and possibly `~/.vim_bundle / ~/.vim_undodir` into `~/.vim_backup`. Thereafter, the appropriate directories and files are copied and created (`~/.vim_bundle`, `~/.vim_undodir` and `~/.vimrc`). Finally, vim will run and install the plugins via Vundle. NOTE: YOU WILL GET A ERROR FROM VUNDLE SAYING GRUVBOX COULDN'T BE FOUND, PLEASE JUST HIT ENTER!
+The commands below will download this repository to `~/.vim_temp` in you home directory, then execute the setup script. The script makes a backup of your existing vim configuration to `~/.vim_backup`. Thereafter, the script will setup all requirements for this vimrc. NOTE: WHEN YOU RECEIVE A PROMPT, JUST HIT ENTER.
+
 ```sh
 git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
 ~/.vim_temp/setup.sh
 ```
+
+If the script doesn't work (maybe you are running Windows or OSX) you can just follow the steps below:
+1. Remove (backup) your existing .vimrc and related folders from your home directory.
+2. Download this repository, just copy over the .vimrc to your home directory.
+3. Create two folders, `.vim_bundle` and `.vim_undodir` in your home directory.
+4. Run vim and call `:PluginInstall`.
+5. Done!
+
 
 Features
 --------

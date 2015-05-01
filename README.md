@@ -1,6 +1,15 @@
 vimrc
 =====
 
+Installation
+------------
+1. `git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp`
+2. `mkdir ~/.vim_backup`
+3. `mv ~/.vimrc ~/.vim_backup`
+4. `cp ~/.vim_temp/.vimrc ~/`
+5. `~/.vim_temp/setup.sh`
+6. `All done!`
+
 Features
 --------
 * [Vundle](http://github.com/gmarik/vundle): an awesome package manager.
@@ -21,11 +30,11 @@ Features
 
 Bindings
 --------
-* Disable search highlight (:noh): leader + space
-* YankStack: leader + y/Y
-* NERDTree: leader + n
-* TagBar: leader + t
-* GUndo: leader + g
+* Disable search highlight (:noh): `<leader>space`
+* YankStack: `<leader>y/Y`
+* NERDTree: `<leader>n`
+* TagBar: `<leader>t`
+* GUndo: `<leader>g`
 
 Screenshots
 -----------

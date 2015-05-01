@@ -21,7 +21,7 @@ Features
 
 Bindings
 --------
-* Disable search highlight (:noh): <leader>space
+* Disable search highlight (:noh): leader + space
 * YankStack: leader + y/Y
 * NERDTree: leader + n
 * TagBar: leader + t

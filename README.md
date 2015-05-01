@@ -3,7 +3,9 @@ vimrc
 
 Installation
 ------------
-The commands below will download this repository to `~/.vim_temp` in you home directory, then execute the setup script. The script makes a backup of your existing vim configuration to `~/.vim_backup`. Thereafter, the script will setup all requirements for this vimrc. NOTE: WHEN YOU RECEIVE A PROMPT, JUST HIT ENTER.
+The commands below will download this repository to `~/.vim_temp` in you home directory, then execute the setup script. The script makes a backup of your existing vim configuration to `~/.vim_backup`. Thereafter, the script will setup all requirements for this vimrc. 
+
+NOTE: WHEN YOU RECEIVE A PROMPT, JUST HIT ENTER.
 
 ```sh
 git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \

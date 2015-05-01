@@ -3,12 +3,11 @@ vimrc
 
 Installation
 ------------
-1. `git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp`
-2. `mkdir ~/.vim_backup`
-3. `mv ~/.vimrc ~/.vim_backup`
-4. `cp ~/.vim_temp/.vimrc ~/`
-5. `~/.vim_temp/setup.sh`
-6. `All done!`
+`git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp`
+`mkdir ~/.vim_backup`
+`mv ~/.vimrc ~/.vim_backup`
+`cp ~/.vim_temp/.vimrc ~/`
+`~/.vim_temp/setup.sh`
 
 Features
 --------

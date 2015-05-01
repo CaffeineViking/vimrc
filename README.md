@@ -13,6 +13,7 @@ git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
 ```
 
 If the script doesn't work (maybe you are running Windows or OSX) you can just follow the steps below:
+
 1. Remove (backup) your existing .vimrc and related folders from your home directory.
 2. Download this repository, just copy over the .vimrc to your home directory.
 3. Create two folders, `.vim_bundle` and `.vim_undodir` in your home directory.

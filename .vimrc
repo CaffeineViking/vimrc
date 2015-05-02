@@ -7,7 +7,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Functional:
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'maxbrunsfeld/vim-yankstack'
@@ -17,11 +16,6 @@ Plugin 'sjl/gundo.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'morhetz/gruvbox'
-
-" Language:
-Plugin 'wting/rust.vim'
-Plugin 'jdonaldson/vaxe'
-Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 filetype plugin indent on
@@ -119,12 +113,4 @@ filetype plugin indent on
     let g:yankstack_map_keys=0
     nmap <leader>y <Plug>yankstack_substitute_older_paste
     nmap <leader>Y <Plug>yankstack_substitute_newer_paste
-" }
-
-" Misc: {
-    let g:syntastic_cpp_compiler = 'g++'
-    let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
-
-    let g:syntastic_c_compiler = 'gcc'
-    let g:syntastic_c_compiler_options = '-std=c11 -Wall -Wextra -pedantic'
 " }

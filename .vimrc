@@ -81,7 +81,7 @@ filetype plugin indent on
     set noshowmode " Disables standard -INSERT-, -NORMAL-, etc... Lightline will provide a better looking one for us.
     set t_Co=256 " This will 'force' terminals to use 256 colors, enabling Lightline and the colorscheme to look correct.
     set background=dark " Cool programmers only use dark themes.
-    colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
+    silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
     " Jellybeans is a nice lightline theme (for another colorscheme) but it blends with gruvbox quite nicely.
     let g:lightline = {
@@ -94,7 +94,7 @@ filetype plugin indent on
     let g:tagbar_autofocus = 1
 
     if has("gui_running")
-        set guifont=SourceCodePro\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
+        set guifont=SourceCodePro\ 10,Monospace\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
         set guioptions=i " Will disable all nasty GUI toolbars on gvim.
     endif
 

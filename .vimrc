@@ -1,3 +1,6 @@
+" This is my vimrc, you might also like it.
+" - Erik S. V. Jansson
+
 set nocompatible
 filetype off
 

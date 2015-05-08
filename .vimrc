@@ -106,9 +106,7 @@ filetype plugin indent on
 " }
 
 " Mapping: {
-    map <silent> <leader><cr> :noh<cr>
     map <silent> <leader><space> :noh<cr>
-
     map <leader>n :NERDTreeToggle<cr>
     map <leader>t :TagbarToggle<cr>
     map <leader>g :GundoToggle<cr>

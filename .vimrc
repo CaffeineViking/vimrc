@@ -115,21 +115,4 @@ filetype plugin indent on
     let g:yankstack_map_keys=0
     nmap <leader>y <Plug>yankstack_substitute_older_paste
     nmap <leader>Y <Plug>yankstack_substitute_newer_paste
-
-    function! s:Spaces(count)
-        set expandtab
-        let &g:shiftwidth=a:count
-        let &g:tabstop=a:count
-        let &g:softtabstop=a:count
-    endfunction
-
-    function! s:Tabs(count)
-        set noexpandtab
-        let &g:shiftwidth=a:count
-        let &g:tabstop=a:count
-        let &g:softtabstop=a:count
-    endfunction
-
-    command! -nargs=1 Spaces call s:Spaces(<f-args>)
-    command! -nargs=1 Tabs call s:Tabs(<f-args>)
 " }

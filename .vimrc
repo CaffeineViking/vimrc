@@ -28,6 +28,8 @@ filetype plugin indent on
     set nobackup " No need for .bkp files when version control exist.
     set nowritebackup " If Vim crashes often then turn backups on again, look at docs for more information.
     set noswapfile " Don't create swap files, nowadays we should have enough memory to store a text file.
+    set complete-=i " Completion list for all included files is a bad idea, scanning could take a while.
+    set sessionoptions-=options " Don't store options (global variables etc...) when making a session.
 
     set undodir=~/.vim_undodir " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are awesome!
@@ -48,7 +50,6 @@ filetype plugin indent on
     set backspace=indent,eol,start
     set wrap " Wrap text. This is also quite optional, replace with textwidth=80 is you don't want this behaviour.
     set lazyredraw " Good performance boost when executing macros.
-    set viminfo^=% " Remember some info on close.
 " }
 
 " Searching: {
@@ -106,7 +107,7 @@ filetype plugin indent on
 " }
 
 " Mapping: {
-    map <silent> <leader><space> :noh<cr>
+    map <leader><space> :noh<cr>
     map <leader>n :NERDTreeToggle<cr>
     map <leader>t :TagbarToggle<cr>
     map <leader>g :GundoToggle<cr>

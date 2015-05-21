@@ -63,7 +63,7 @@ filetype plugin indent on
 " UI: {
     set ffs=unix,dos,mac " Prioritize unix as the standard file type.
     set encoding=utf-8 " Vim can now work with a whole bunch more characters.
-    set scrolloff=7 " The screen will only scroll when the cursor is 7 characters from the top/bottom.
+    set scrolloff=8 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
     set foldmethod=indent " Pressing zc will close a fold at the current indent while zo will open one.
 
     set wildmenu " Enable the 'autocomplete' menu when in command mode (':').

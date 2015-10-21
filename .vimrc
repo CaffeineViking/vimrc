@@ -68,8 +68,7 @@ filetype plugin indent on
 
     set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
     set cursorline " For easier cursor spotting. Completly optional though.
-    set shortmess=a " Shorten some command mode messages, will keep you from having to hit ENTER all the time.
-    set cmdheight=2 " Will also reduce the frequency of having to press ENTER.
+    set shortmess=at " Shorten some command mode messages, will keep you from having to hit ENTER all the time.
     set stal=2 " Always show tabs.
 
     set showmatch " Will highlight matching brackets.

@@ -106,10 +106,10 @@ filetype plugin indent on
 " }
 
 " Mapping: {
-    map <leader><space> :noh<cr>
-    map <leader>n :NERDTreeToggle<cr>
-    map <leader>t :TagbarToggle<cr>
-    map <leader>g :GundoToggle<cr>
+    map <leader><space> :silent! noh<cr>
+    map <leader>n :silent! NERDTreeToggle<cr>
+    map <leader>t :silent! TagbarToggle<cr>
+    map <leader>g :silent! GundoToggle<cr>
 
     let g:yankstack_map_keys=0
     nmap <leader>y <Plug>yankstack_substitute_older_paste

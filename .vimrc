@@ -86,9 +86,9 @@ filetype plugin indent on
     set background=dark " Cool programmers only use dark themes.
     silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
-    " Jellybeans is a nice lightline theme (for another colorscheme) but it blends with gruvbox quite nicely.
+    " Yay, lightline gruvbox theme!
     let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'gruvbox',
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 

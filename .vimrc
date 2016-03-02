@@ -36,7 +36,7 @@ filetype plugin indent on
 
     let mapleader=',' " Map <leader> to the ',' key. This is used to extend Vims functionality without overwriting any standard bindings.
     let g:mapleader=',' " Do this globally too.
-    set history=1000 " Defines the number of stored commands that Vim can remember, we have so much memory today it doesn't even matter.
+    set history=1024 " Defines the number of stored commands that Vim can remember, we have so much memory today it doesn't even matter.
 " }
 
 " Formatting: {

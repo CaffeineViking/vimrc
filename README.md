@@ -7,7 +7,7 @@ The shell script snipplet below will download this repository to `~/.vim_temp` a
 
 ```sh
 git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
-cd ~/.vim_temp && ./setup.sh && rm -rf ~/.vim_temp
+cd ~/.vim_temp && ./setup.sh && rm -rf ~/.vim_temp && cd ~
 ```
 
 If the script doesn't work (maybe you are running Windows or OSX) you can just follow the steps below:

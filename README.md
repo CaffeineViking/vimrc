@@ -6,7 +6,8 @@ Installation
 The shell script snipplet below will download this repository to `~/.vim_temp` and then execute the setup script. This script creates all the necessary folders in your home folder and fetches the required Vundle package manager. Thereafter, the `.vimrc` is moved too (make sure you backup you existing configuration in case you don't like this). It will automatically open vim and start downloading the required packages.
 
 ```sh
-git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && ~/.vim_temp/setup.sh && rm -rf ~/.vim_temp
+git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
+cd ~/.vim_temp && ./setup.sh && rm -rf ~/.vim_temp
 ```
 
 If the script doesn't work (maybe you are running Windows or OSX) you can just follow the steps below:

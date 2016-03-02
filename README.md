@@ -3,11 +3,10 @@ vimrc
 
 Installation
 ------------
-The commands below will download this repository to `~/.vim_temp` in you home directory, then execute the setup script. The script makes a backup of your existing vim configuration to `~/.vim_backup`. Thereafter, the script will setup all requirements for this vimrc. Additionally, the quite awesome Source Code Pro font will be installed.
+The shell script snipplet below will download this repository to `~/.vim_temp` and then execute the setup script. This script creates all the necessary folders in your home folder and fetches the required Vundle package manager. Thereafter, the `.vimrc` is moved too (make sure you backup you existing configuration in case you don't like this). It will automatically open vim and start downloading the required packages.
 
 ```sh
-git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
-~/.vim_temp/setup.sh
+git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && ~/.vim_temp/setup.sh && rm -rf ~/.vim_temp
 ```
 
 If the script doesn't work (maybe you are running Windows or OSX) you can just follow the steps below:
@@ -15,9 +14,9 @@ If the script doesn't work (maybe you are running Windows or OSX) you can just f
 1. Remove (backup) your existing .vimrc and related folders from your home directory.
 2. Download this repository, just copy over the .vimrc to your home directory.
 3. Create two folders, `.vim_bundle` and `.vim_undodir` in your home directory.
-5. Download and install the Source Code Pro font (optional).
+5. Fetch the source from the Vundle repository. Put it in `.vim_bundle/Vundle.vim`.
 4. Run vim and call `:PluginInstall`.
-5. Done!
+5. Done! Please enjoy.
 
 Features
 --------
@@ -30,7 +29,6 @@ Features
 * [TabLine](https://github.com/mkitt/tabline.vim): improved tab output, no clutter.
 * [LightLine](https://github.com/itchyny/lightline.vim): minimal and lightweight statusline/tabline.
 * [GruvBox](https://github.com/morhetz/gruvbox): pretty colors.
-* [Source Code Pro](https://github.com/adobe-fonts/source-code-pro): nice monospaced font, good for programming.
 * No overwritten vim bindings, all key mappings are bound to the leader key.
 * Sane defaults for vim: indents, no swap files, persistent undo tree etc...
 

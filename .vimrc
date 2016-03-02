@@ -31,7 +31,7 @@ filetype plugin indent on
     set complete-=i " Completion list for all included files is a bad idea, scanning could take a while.
     set sessionoptions-=options " Don't store options (global variables etc...) when making a session.
 
-    set undodir=~/.vim_undodir " Where do we store all this awesomeness?!?!
+    set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are awesome!
 
     let mapleader=',' " Map <leader> to the ',' key. This is used to extend Vims functionality without overwriting any standard bindings.

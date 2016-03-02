@@ -1,7 +1,7 @@
 #!/bin/bash
 #  setup.sh
 
-HOMEDIR=home
+HOMEDIR=~
 VIMRC=.vimrc
 BUNDLE=$HOMEDIR/.vim_bundle
 UNDOES=$HOMEDIR/.vim_undoes

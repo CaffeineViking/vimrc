@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
-Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'mileszs/ack.vim'
 Plugin 'sjl/gundo.vim'
 
 " Pretty:
@@ -58,6 +58,10 @@ filetype plugin indent on
     set incsearch " Enables the user to step through each search 'hit'.
     set hlsearch " Will stop highlighting current search 'hits' when another search is performed.
     set magic " Enables regular expressions. They are a bit like magic.
+    " Ack and Ag are incredibly useful for searching really, fast.
+    if executable('ag') " The Silver Searcher, faster than 'ack'.
+        let g:ackprg = 'ag --vimgrep' " Enables compat. with vim.
+    endif " Will use 'ag' if exists, otherwise uses normal Ack.
 " }
 
 " UI: {

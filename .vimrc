@@ -9,6 +9,7 @@ call vundle#begin('~/.vim_bundle')
 Plugin 'gmarik/Vundle.vim'
 
 " Functional:
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'

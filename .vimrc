@@ -116,8 +116,4 @@ filetype plugin indent on
     map <leader>n :silent! NERDTreeToggle<cr>
     map <leader>t :silent! TagbarToggle<cr>
     map <leader>g :silent! GundoToggle<cr>
-
-    let g:yankstack_map_keys=0
-    nmap <leader>y <Plug>yankstack_substitute_older_paste
-    nmap <leader>Y <Plug>yankstack_substitute_newer_paste
 " }

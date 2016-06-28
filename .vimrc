@@ -98,9 +98,15 @@ filetype plugin indent on
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
+    let g:gundo_width = 48
+    let g:tagbar_width = 48
+    let g:NERDTreeWinSize = 48
+    let g:NERDTreeMinimalUI = 1
     let g:NERDTreeWinPos = "right"
     let g:gundo_right = 1 " right
     let g:tagbar_autofocus = 1
+    let g:tagbar_compact = 1
+    let g:gundo_help = 0
 
     if has("gui_running")
         set guifont=SourceCodePro\ 10,Monospace\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
@@ -108,6 +114,7 @@ filetype plugin indent on
     endif
 
     set list
+    " Useful for showing trailing whitespace.
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 " }
 

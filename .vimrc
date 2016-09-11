@@ -93,26 +93,84 @@ filetype plugin indent on
     set background=dark " Cool programmers only use dark themes.
     silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
-    " Yay, gruvbox theme!
-    let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
+    " LightLine: {
+        function! LightLineModified()
+            if &filetype == "help"
+                return ""
+            elseif &modified
+                return "+"
+            elseif &modifiable
+                return ""
+            else
+                return ""
+            endif
+        endfunction
 
-    let g:gundo_width = 48
-    let g:tagbar_width = 48
-    let g:NERDTreeWinSize = 48
-    let g:NERDTreeMinimalUI = 1
-    let g:NERDTreeWinPos = "right"
-    let g:gundo_right = 1 " right
-    let g:tagbar_autofocus = 1
-    let g:tagbar_compact = 1
-    let g:gundo_help = 0
+        function! LightLineReadonly()
+            if &filetype == "help"
+                return ""
+            elseif &readonly
+                return "\ue0a2"
+            else
+                return ""
+            endif
+        endfunction
 
-    if has("gui_running")
-        set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
-        set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power of vim is without mouses!
-    endif
+        function! LightLineFugitive()
+            if exists("*fugitive#head")
+                let branch = fugitive#head()
+                return branch !=# '' ? '\ue0a0 '.branch : ''
+            endif
+            return ''
+        endfunction
+
+        function! LightLineFilename()
+            return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+                 \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+                 \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+        endfunction
+    " }
+
+    " Window: {
+        let g:gundo_width = 48
+        let g:tagbar_width = 48
+        let g:NERDTreeWinSize = 48
+        let g:NERDTreeMinimalUI = 1
+        let g:NERDTreeWinPos = "right"
+        let g:gundo_right = 1 " right
+        let g:tagbar_autofocus = 1
+        let g:tagbar_compact = 1
+        let g:gundo_help = 0
+    " }
+
+    " GUIs: {
+        if has("gui_running")
+            " Pretty nice here.
+            let g:lightline = {
+            \ 'colorscheme': 'gundo',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'fugitive', 'filename' ] ]
+            \ },
+            \ 'component_function': {
+            \   'fugitive': 'LightLineFugitive',
+            \   'readonly': 'LightLineReadonly',
+            \   'modified': 'LightLineModified',
+            \   'filename': 'LightLineFilename'
+            \ },
+            \ 'separator': { 'left': '\ue0b0', 'right': '\ue0b2' },
+            \ 'subseparator': { 'left': '\ue0b1', 'right': '\ue0b3' }
+            \ } " Enable a bunch of nice powerline stuff for lightline. Requires a patched font e.g.: Hack...
+            set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Hack:h10 on Windows, MacOS should work?
+            set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power of vim is without mouses!
+        else
+            " Good-old shell...
+            let g:lightline = {
+            \ 'colorscheme': 'gruvbox',
+            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
+        endif
+    " }
 
     set list " Enables characters to show.
     " Useful for showing trailing whitespace.

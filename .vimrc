@@ -14,6 +14,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tmhedberg/matchit'
 Plugin 'mileszs/ack.vim'
 Plugin 'sjl/gundo.vim'
 
@@ -49,7 +50,7 @@ filetype plugin indent on
     set softtabstop=4 " Enables easy removal of an indentation level.
 
     set autoindent " Automatically copy the previous indent level. Don't use smartindent.
-    set backspace=indent,eol,start
+    set backspace=2 " Used for making backspace work like in most other editors (remove indents).
     set wrap " Wrap text. This is also quite optional, replace with textwidth=80 is you don't want this behaviour.
     set lazyredraw " Good performance boost when executing macros.
 " }
@@ -92,7 +93,7 @@ filetype plugin indent on
     set background=dark " Cool programmers only use dark themes.
     silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
-    " Yay, lightline gruvbox theme!
+    " Yay, gruvbox theme!
     let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'subseparator': { 'left': '', 'right': '' }
@@ -109,11 +110,11 @@ filetype plugin indent on
     let g:gundo_help = 0
 
     if has("gui_running")
-        set guifont=SourceCodePro\ 10,Monospace\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
-        set guioptions=i " Will disable all nasty GUI toolbars on gvim.
+        set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Source_Code_Pro:h10 on Windows and OSX.
+        set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power of vim is without mouses!
     endif
 
-    set list
+    set list " Enables characters to show.
     " Useful for showing trailing whitespace.
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 " }

@@ -43,3 +43,8 @@ Bindings
 * Toggle NERDTree: `<leader>n`
 * Toggle TagBar: `<leader>t`
 * Toggle GUndo: `<leader>g`
+
+Screenshot
+----------
+
+![pretty](https://i.imgsafe.org/5de94d923a.png)

@@ -110,7 +110,7 @@ filetype plugin indent on
             if &filetype == "help"
                 return ""
             elseif &readonly
-                return "\ue0a2"
+                return ""
             else
                 return ""
             endif
@@ -119,7 +119,7 @@ filetype plugin indent on
         function! LightLineFugitive()
             if exists("*fugitive#head")
                 let branch = fugitive#head()
-                return branch !=# '' ? '\ue0a0 '.branch : ''
+                return branch !=# '' ? ' '.branch : ''
             endif
             return ''
         endfunction
@@ -147,7 +147,7 @@ filetype plugin indent on
         if has("gui_running")
             " Pretty nice here.
             let g:lightline = {
-            \ 'colorscheme': 'gundo',
+            \ 'colorscheme': 'gruvbox',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
             \             [ 'fugitive', 'filename' ] ]
@@ -158,8 +158,8 @@ filetype plugin indent on
             \   'modified': 'LightLineModified',
             \   'filename': 'LightLineFilename'
             \ },
-            \ 'separator': { 'left': '\ue0b0', 'right': '\ue0b2' },
-            \ 'subseparator': { 'left': '\ue0b1', 'right': '\ue0b3' }
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
             \ } " Enable a bunch of nice powerline stuff for lightline. Requires a patched font e.g.: Hack...
             set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Hack:h10 on Windows, MacOS should work?
             set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power of vim is without mouses!

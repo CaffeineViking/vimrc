@@ -1,5 +1,5 @@
 " This is my vimrc, you might also like it.
-" - Erik S. V. Jansson
+" - Erik S. Vasconcelos Jansson
 
 set nocompatible
 filetype off
@@ -9,19 +9,19 @@ call vundle#begin('~/.vim_bundle')
 Plugin 'gmarik/Vundle.vim'
 
 " Functional:
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tmhedberg/matchit'
-Plugin 'mileszs/ack.vim'
-Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-repeat' " Extend the Vim '.' operator.
+Plugin 'tpope/vim-surround' " Change (){}<>'' in a snap.
+Plugin 'scrooloose/nerdtree' " Better than NetRw, maybe.
+Plugin 'majutsushi/tagbar' " Nice to get a code topview.
+Plugin 'tpope/vim-fugitive' " Probably best Git wrapper.
+Plugin 'tmhedberg/matchit' " The '%' now matches more k?
+Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
+Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
 
 " Pretty:
-Plugin 'mkitt/tabline.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'mkitt/tabline.vim' " Provides e.g. tab numbers!!
+Plugin 'itchyny/lightline.vim' " For lightweight tbline.
+Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
 
 call vundle#end()
 filetype plugin indent on
@@ -35,10 +35,10 @@ filetype plugin indent on
     set sessionoptions-=options " Don't store options (global variables etc...) when making a session.
 
     set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
-    set undofile " Persistent undos are awesome!
+    set undofile " Persistent undos are completely freaking awesome!!!
 
     let mapleader=',' " Map <leader> to the ',' key. This is used to extend Vims functionality without overwriting any standard bindings.
-    let g:mapleader=',' " Do this globally too.
+    let g:mapleader=',' " Do this globally too. This vimrc tries to keep changes in standard behaviour to a very bare minimum.
     set history=1024 " Defines the number of stored commands that Vim can remember, we have so much memory today it doesn't even matter.
 " }
 
@@ -60,8 +60,8 @@ filetype plugin indent on
     set smartcase " Will override some ignorecase properties, when using caps it will do a special search.
     set incsearch " Enables the user to step through each search 'hit'.
     set hlsearch " Will stop highlighting current search 'hits' when another search is performed.
-    set magic " Enables regular expressions. They are a bit like magic.
-    " Ack and Ag are incredibly useful for searching really, fast.
+    set magic " Enables regular expressions. They are a bit like magic (not really though, DFA).
+    " Ack and Ag are incredibly useful for searching really fast.
     if executable('ag') " The Silver Searcher, faster than 'ack'.
         let g:ackprg = 'ag --vimgrep' " Enables compat. with vim.
     endif " Will use 'ag' if exists, otherwise uses normal Ack.
@@ -86,11 +86,11 @@ filetype plugin indent on
     set ruler " Always show current cursor position.
     set hidden " Abandon buffer when closed.
 
-    syntax on " The most important feature when coding. Please give!.
+    syntax on " The most important feature when coding. Vim please bless us with this option right now!.
     set laststatus=2 " Always have a status line, this is required in order for Lightline to work correctly.
     set noshowmode " Disables standard -INSERT-, -NORMAL-, etc... Lightline will provide a better looking one for us.
     set t_Co=256 " This will 'force' terminals to use 256 colors, enabling Lightline and the colorscheme to look correct.
-    set background=dark " Cool programmers only use dark themes.
+    set background=dark " Cool programmers only use dark themes. Always.
     silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
     " LightLine: {

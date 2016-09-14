@@ -31,6 +31,7 @@ Features
 * [TabLine](https://github.com/mkitt/tabline.vim): improved tab output, no clutter.
 * [LightLine](https://github.com/itchyny/lightline.vim): minimal and lightweight statusline/tabline.
 * [Vim-Repeat](https://github.com/tpope/vim-repeat): extends vim's '.' operator usage.
+* [Vim-Commentary](https://github.com/tpope/vim-commentary): comment stuff out with gc.
 * [MatchIt](https://github.com/tmhedberg/matchit): operator '%' matches more stuff.
 * [Ack](https://github.com/mileszs/ack.vim): searches directory absurdingly fast.
 * [GruvBox](https://github.com/morhetz/gruvbox): very, extremely, pretty colors.

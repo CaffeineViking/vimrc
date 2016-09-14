@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Functional:
 Plugin 'tpope/vim-repeat' " Extend the Vim '.' operator.
+Plugin 'tpope/vim-commentary.git' " Comment stuff out...
 Plugin 'tpope/vim-surround' " Change (){}<>'' in a snap.
 Plugin 'scrooloose/nerdtree' " Better than NetRw, maybe.
 Plugin 'majutsushi/tagbar' " Nice to get a code topview.

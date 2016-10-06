@@ -1,5 +1,12 @@
-" This is my vimrc, you might also like it.
-" - Erik Sven Vasconcelos Jansson
+"        _
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
+" ============================
+"
+"   --by Erik S. V. Jansson-
+"
 
 " Initialization: {
     set nocompatible " Enable features which aren't compatible with Vi.
@@ -142,6 +149,8 @@
     " }
 
     " Windows: {
+        " Make the window size
+        " consistent 48 width.
         let g:gundo_width = 48
         let g:tagbar_width = 48
         let g:NERDTreeWinSize = 48
@@ -188,8 +197,12 @@
 " }
 
 " Mappings: {
+    " Remove previous search highlight.
     map <leader><space> :silent! noh<cr>
+    " Toggle the NERDTree window on or off.
     map <leader>n :silent! NERDTreeToggle<cr>
+    " Same thing with the TagBar pop-up window.
     map <leader>t :silent! TagbarToggle<cr>
+    " Finally, toggle the Gundo window too.
     map <leader>g :silent! GundoToggle<cr>
 " }

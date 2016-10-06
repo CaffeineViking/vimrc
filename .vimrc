@@ -1,31 +1,39 @@
 " This is my vimrc, you might also like it.
-" - Erik S. Vasconcelos Jansson
+" - Erik Sven Vasconcelos Jansson
 
-set nocompatible
-filetype off
+" Initialization: {
+    set nocompatible " Enable features which aren't compatible with Vi.
+    filetype off " Required by Vundle before setting the runtime paths.
 
-set rtp+=~/.vim_bundle/Vundle.vim
-call vundle#begin('~/.vim_bundle')
-Plugin 'gmarik/Vundle.vim'
+    set rtp+=~/.vim_bundle/Vundle.vim " Specify the Vim runtime path...
+    call vundle#begin('~/.vim_bundle') " The package install directory.
+    Plugin 'gmarik/Vundle.vim' " Useful if Vundle itself has updates.
+" }
 
-" Functional:
-Plugin 'tpope/vim-repeat' " Extend the Vim '.' operator.
-Plugin 'tpope/vim-commentary.git' " Comment stuff out...
-Plugin 'tpope/vim-surround' " Change (){}<>'' in a snap.
-Plugin 'scrooloose/nerdtree' " Better than NetRw, maybe.
-Plugin 'majutsushi/tagbar' " Nice to get a code topview.
-Plugin 'tpope/vim-fugitive' " Probably best Git wrapper.
-Plugin 'tmhedberg/matchit' " The '%' now matches more k?
-Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
-Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
+" Plugins: {
+    " Functional: {
+        Plugin 'tpope/vim-repeat' " Extend the Vim '.' operator.
+        Plugin 'tpope/vim-commentary.git' " Comment stuff out...
+        Plugin 'tpope/vim-surround' " Change (){}<>'' in a snap.
+        Plugin 'scrooloose/nerdtree' " Better than NetRw, maybe.
+        Plugin 'majutsushi/tagbar' " Nice to get a code topview.
+        Plugin 'tpope/vim-fugitive' " Probably best Git wrapper.
+        Plugin 'tmhedberg/matchit' " The '%' now matches more k?
+        Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
+        Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
+    " }
 
-" Pretty:
-Plugin 'mkitt/tabline.vim' " Provides e.g. tab numbers!!
-Plugin 'itchyny/lightline.vim' " For lightweight tbline.
-Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
+    " Cosmetic: {
+        Plugin 'mkitt/tabline.vim' " Provides e.g. tab numbers!!
+        Plugin 'itchyny/lightline.vim' " For lightweight tbline.
+        Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
+    "}
+" }
 
-call vundle#end()
-filetype plugin indent on
+" Preliminaries: {
+    call vundle#end() " Let Vundle finish initializing itself now.
+    filetype plugin indent on " Enable file specific features...
+}
 
 " General: {
     set autoread " Reload file when changed externally.
@@ -47,54 +55,55 @@ filetype plugin indent on
     set expandtab " Expand tab characters to space characters.
     set shiftwidth=4 " One tab is now 4 spaces.
     set shiftround " Always round up to the nearest tab.
-    set tabstop=4 " This one is also needed to acheive the desired effect.
+    set tabstop=4 " This one is also needed to achieve the desired effect.
     set softtabstop=4 " Enables easy removal of an indentation level.
 
-    set autoindent " Automatically copy the previous indent level. Don't use smartindent.
-    set backspace=2 " Used for making backspace work like in most other editors (remove indents).
+    set autoindent " Automatically copy the previous indent level. Don't use smartindent!!!
+    set backspace=2 " Used for making backspace work like in most other editors (e.g. removing a single indent).
     set wrap " Wrap text. This is also quite optional, replace with textwidth=80 is you don't want this behaviour.
-    set lazyredraw " Good performance boost when executing macros.
+    set lazyredraw " Good performance boost when executing macros, redraw the screen only on certain commands.
 " }
 
 " Searching: {
-    set ignorecase " Search is not case sensitive.
+    set ignorecase " Search is not case sensitive, which is usually what we want.
     set smartcase " Will override some ignorecase properties, when using caps it will do a special search.
-    set incsearch " Enables the user to step through each search 'hit'.
+    set incsearch " Enables the user to step through each search 'hit', usually what is desired here.
     set hlsearch " Will stop highlighting current search 'hits' when another search is performed.
     set magic " Enables regular expressions. They are a bit like magic (not really though, DFA).
-    " Ack and Ag are incredibly useful for searching really fast.
-    if executable('ag') " The Silver Searcher, faster than 'ack'.
-        let g:ackprg = 'ag --vimgrep' " Enables compat. with vim.
+    " Ack and Ag are incredibly useful for searching really fast, forget slow IDE searching.
+    if executable('ag') " The Silver Searcher, faster than 'ack' (mostly)
+        let g:ackprg = 'ag --vimgrep' " Enables ag compat. with vim.
     endif " Will use 'ag' if exists, otherwise uses normal Ack.
 " }
 
-" UI: {
+" Interface: {
     set ffs=unix,dos,mac " Prioritize unix as the standard file type.
-    set encoding=utf-8 " Vim can now work with a whole bunch more characters.
+    set encoding=utf-8 " Vim can now work with a whole bunch more characters (powerline too).
     set scrolloff=8 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
     set foldmethod=indent " Pressing zc will close a fold at the current indent while zo will open one.
 
     set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
-    set cursorline " For easier cursor spotting. Completly optional though.
+    set cursorline " For easier cursor spotting. Completely optional though (but so is bathing).
     set shortmess=at " Shorten some command mode messages, will keep you from having to hit ENTER all the time.
-    set stal=2 " Always show tabs.
+    " set cmdheight=2 " Might decrease the number of times for hitting enter even more, double default height.
+    set stal=2 " Always show the tab lines, which makes the user interface a bit more consistent.
 
     set showmatch " Will highlight matching brackets.
     set mat=2 " How long the highlight will last.
     set number " Show line numbers on left side.
-    set relativenumber " Enables the user to easilty see the relative distance between cursor and target line.
-    set ttyfast " Will send characters over a terminal connection faster. We do have pretty fast computers after all.
-    set ruler " Always show current cursor position.
-    set hidden " Abandon buffer when closed.
+    set relativenumber " Enables the user to easily see the relative distance between cursor and target line.
+    set ttyfast " Will send characters over a terminal connection faster. We do have fast connections after all.
+    set ruler " Always show current cursor position, which might be needed for the character column location.
+    set hidden " Abandon buffer when closed, which is usually what we want to do in this case.
 
     syntax on " The most important feature when coding. Vim please bless us with this option right now!.
     set laststatus=2 " Always have a status line, this is required in order for Lightline to work correctly.
     set noshowmode " Disables standard -INSERT-, -NORMAL-, etc... Lightline will provide a better looking one for us.
     set t_Co=256 " This will 'force' terminals to use 256 colors, enabling Lightline and the colorscheme to look correct.
-    set background=dark " Cool programmers only use dark themes. Always.
+    set background=dark " Cool programmers only use dark themes. It's good for your eyes man, really nice!
     silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
-    " LightLine: {
+    " LightLine Settings: {
         function! LightLineModified()
             if &filetype == "help"
                 return ""
@@ -132,7 +141,7 @@ filetype plugin indent on
         endfunction
     " }
 
-    " Window: {
+    " Windows: {
         let g:gundo_width = 48
         let g:tagbar_width = 48
         let g:NERDTreeWinSize = 48
@@ -144,7 +153,7 @@ filetype plugin indent on
         let g:gundo_help = 0
     " }
 
-    " GUIs: {
+    " Graphical: {
         if has("gui_running")
             " Pretty nice here.
             let g:lightline = {
@@ -178,7 +187,7 @@ filetype plugin indent on
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 " }
 
-" Mapping: {
+" Mappings: {
     map <leader><space> :silent! noh<cr>
     map <leader>n :silent! NERDTreeToggle<cr>
     map <leader>t :silent! TagbarToggle<cr>

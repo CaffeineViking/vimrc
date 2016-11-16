@@ -5,7 +5,7 @@
 "   \_/ |_|_| |_| |_|_|  \___|
 " ============================
 "
-"   --by Erik S. V. Jansson-
+"    --Erik S. V. Jansson--
 "
 
 " Initialization: {
@@ -155,6 +155,9 @@
         let g:tagbar_width = 48
         let g:NERDTreeWinSize = 48
         let g:NERDTreeMinimalUI = 1
+        let g:NERDTreeShowLineNumbers = 1
+        " Enable awesome relative line numbers here too.
+        autocmd FileType nerdtree setlocal relativenumber
         let g:NERDTreeWinPos = "right"
         let g:gundo_right = 1 " right
         let g:tagbar_autofocus = 1

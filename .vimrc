@@ -4,6 +4,7 @@
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
 " ============================
+" Sane, Lightweight, Aesthetic
 "
 "    --Erik S. V. Jansson--
 "
@@ -43,7 +44,8 @@
 }
 
 " General: {
-    set autoread " Reload file when changed externally.
+    set autowrite " Write automatically when :make, :next etc...
+    set autoread " Reload file when it has been changed externally.
     set nobackup " No need for .bkp files when version control exist.
     set nowritebackup " If Vim crashes often then turn backups on again, look at docs for more information.
     set noswapfile " Don't create swap files, nowadays we should have enough memory to store a text file.
@@ -77,6 +79,7 @@
     set incsearch " Enables the user to step through each search 'hit', usually what is desired here.
     set hlsearch " Will stop highlighting current search 'hits' when another search is performed.
     set magic " Enables regular expressions. They are a bit like magic (not really though, DFA).
+
     " Ack and Ag are incredibly useful for searching really fast, forget slow IDE searching.
     if executable('ag') " The Silver Searcher, faster than 'ack' (mostly)
         let g:ackprg = 'ag --vimgrep' " Enables ag compat. with vim.
@@ -88,6 +91,7 @@
     set encoding=utf-8 " Vim can now work with a whole bunch more characters (powerline too).
     set scrolloff=8 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
     set foldmethod=indent " Pressing zc will close a fold at the current indent while zo will open one.
+    set foldopen+=jump " Additionally, open folds when there is a direct jump to the location.
 
     set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
     set cursorline " For easier cursor spotting. Completely optional though (but so is bathing).
@@ -122,7 +126,6 @@
                 return ""
             endif
         endfunction
-
         function! LightLineReadonly()
             if &filetype == "help"
                 return ""
@@ -132,7 +135,6 @@
                 return ""
             endif
         endfunction
-
         function! LightLineFugitive()
             if exists("*fugitive#head")
                 let branch = fugitive#head()
@@ -140,7 +142,6 @@
             endif
             return ''
         endfunction
-
         function! LightLineFilename()
             return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
                  \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
@@ -158,6 +159,7 @@
         let g:NERDTreeShowLineNumbers = 1
         " Enable awesome relative line numbers here too.
         autocmd FileType nerdtree setlocal relativenumber
+        let g:tagbar_show_linenumbers = -1 " Global conf.
         let g:NERDTreeWinPos = "right"
         let g:gundo_right = 1 " right
         let g:tagbar_autofocus = 1
@@ -194,18 +196,20 @@
         endif
     " }
 
-    set list " Enables characters to show.
-    " Useful for showing trailing whitespace.
-    set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+    set list " Enables the characters to be displayed.
+    " Useful for showing trailing whitespace and others.
+    set listchars=tab:›\ ,trail:•,extends:>,precedes:<,nbsp:_
 " }
 
 " Mappings: {
     " Remove previous search highlight.
-    map <leader><space> :silent! noh<cr>
+    map <leader><space> :silent! nohl<cr>
+    nnoremap <C-L> :silent! nohl<cr><C-L>
     " Toggle the NERDTree window on or off.
     map <leader>n :silent! NERDTreeToggle<cr>
     " Same thing with the TagBar pop-up window.
     map <leader>t :silent! TagbarToggle<cr>
     " Finally, toggle the Gundo window too.
     map <leader>g :silent! GundoToggle<cr>
+    map Y y$
 " }

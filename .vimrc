@@ -41,7 +41,7 @@
 " Preliminaries: {
     call vundle#end() " Let Vundle finish initializing itself now.
     filetype plugin indent on " Enable file specific features...
-}
+" }
 
 " General: {
     set autowrite " Write automatically when :make, :next etc...

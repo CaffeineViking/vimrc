@@ -29,6 +29,7 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
+        Plugin 'ervandew/supertab' " Lightweight autocompletion.
     " }
 
     " Cosmetic: {

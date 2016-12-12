@@ -190,6 +190,7 @@
             set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power of vim is without mouses!
         else
             " Good-old shell...
+            set mouse=a " Nubs.
             let g:lightline = {
             \ 'colorscheme': 'gruvbox',
             \ 'subseparator': { 'left': '', 'right': '' }

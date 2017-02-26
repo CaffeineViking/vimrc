@@ -28,6 +28,7 @@ Features
 * [Fugitive](https://github.com/tpope/vim-fugitive): easily one of the best Git integrators for Vim.
 * [Vim-Surround](https://github.com/tpope/vim-surround): enables one to manipulate e.g. (){}<> directly.
 * [GUndo](https://github.com/sjl/gundo.vim): graphical visualization of the Vim undo tree and diffs for them.
+* [VimCompletesMe](https://github.com/ajh17/VimCompletesMe): simple and lightweight built-in autocompletions.
 * [TabLine](https://github.com/mkitt/tabline.vim): improved tab output, no clutter.
 * [LightLine](https://github.com/itchyny/lightline.vim): minimal and lightweight statusline/tabline.
 * [Vim-Repeat](https://github.com/tpope/vim-repeat): extends vim's '.' operator usage.
@@ -41,6 +42,7 @@ Features
 Bindings
 --------
 * Disable Highlight: `<leader>space`
+* Disable Highlight (alt): `<ctrl>l`
 * Toggle NERDTree: `<leader>n`
 * Toggle TagBar: `<leader>t`
 * Toggle GUndo: `<leader>g`

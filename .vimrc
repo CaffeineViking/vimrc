@@ -29,7 +29,9 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin 'ajh17/VimCompletesMe' " Unobtrusive autocomplete.
+        Plugin 'ajh17/VimCompletesMe' " Unobtrusive completions.
+        " SuperTab vs VimCompletesMe: the latter is chosen since
+        " the script is shorter (80 against 900 for SuperTab)...
     " }
 
     " Cosmetic: {

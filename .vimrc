@@ -29,7 +29,7 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin 'ervandew/supertab' " Lightweight autocompletion.
+        Plugin 'ajh17/VimCompletesMe' " Unobtrusive autocomplete.
     " }
 
     " Cosmetic: {
@@ -52,6 +52,10 @@
     set noswapfile " Don't create swap files, nowadays we should have enough memory to store a text file.
     set complete-=i " Completion list for all included files is a bad idea, scanning could take a while.
     set sessionoptions-=options " Don't store options (global variables etc...) when making a session.
+    set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
+    " The above autocompletion type will not call any external programs (it might however, use ctags).
+    set completeopt+=longest " Will only insert the longest obviously common match found so far...
+    let g:vcm_direction = 'p' " Pressing <tab> should/will give us the *closest* match backwards.
 
     set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are completely freaking awesome!!!
@@ -204,14 +208,14 @@
 " }
 
 " Mappings: {
-    " Remove previous search highlight.
-    map <leader><space> :silent! nohl<cr>
-    nnoremap <C-L> :silent! nohl<cr><C-L>
-    " Toggle the NERDTree window on or off.
-    map <leader>n :silent! NERDTreeToggle<cr>
-    " Same thing with the TagBar pop-up window.
-    map <leader>t :silent! TagbarToggle<cr>
-    " Finally, toggle the Gundo window too.
-    map <leader>g :silent! GundoToggle<cr>
-    map Y y$
+    " Will remove the latest search/replace highlight.
+    noremap <silent> <leader><space> :silent! nohl<cr>
+    nnoremap <silent> <C-L> :silent! nohl<cr><C-L>
+    " Useful to toggle the NERDTree window back and forth.
+    noremap <silent> <leader>n :silent! NERDTreeToggle<cr>
+    " Same thing as above, but for the TagBar plugin...
+    noremap <silent> <leader>t :silent! TagbarToggle<cr>
+    " For another window, this time for the GUndo tree.
+    noremap <silent> <leader>g :silent! GundoToggle<cr>
+    noremap <silent> :silent! Y y$
 " }

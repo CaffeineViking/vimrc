@@ -1,9 +1,12 @@
-vimrc
-=====
+Sane, Lightweight and Aesthetic Vim
+===================================
+
+Herein you will find my personal vim setup, that has been written from scratch and been used actively for several years. It is designed to be as close to "regular" vim as possible (you are using vim for a reason, otherwise you should just use another editor/ide with vim bindings). However, to further enhance the experience, several modern features have been enabled for your convenience, and certain settings which I (and others) consider "sane", have been added. In addition, to make programming/editing more pleasant, certain plugins have been added for both aesthetic and functional purpose. However, these have been selected carefully to comply with standard vim usage, anything deviating far from it will not be included (again, you are using vim for a reason). Hope these settings will be of use to you. Please enjoy!
 
 Installation
 ------------
-The shell script snipplet below will download this repository to `~/.vim_temp` and then execute the setup script. This script creates all the necessary folders in your home folder and fetches the required Vundle package manager. Thereafter, the `.vimrc` is moved too (make sure you backup you existing configuration in case you don't like this). It will automatically open vim and start downloading the required packages for you (go fetch some coffee, or eat some fika).
+
+The shell script snipplet below will download this repository to `~/.vim_temp` and then execute the setup script. This script creates all the necessary folders in your home folder and fetches the required Vundle package manager. Afterwards, the target `.vimrc` is moved there too (make sure you backup you existing configuration in case you don't like my configuration). Finally, it will automatically open vim and start downloading the required packages for you (go fetch some coffee and maybe fika).
 
 ```sh
 git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
@@ -22,6 +25,7 @@ If the script doesn't work (maybe you are running Windows or MacOS) you can just
 
 Features
 --------
+
 * [Vundle](http://github.com/gmarik/vundle): an awesome package manager.
 * [NERDTree](https://github.com/scrooloose/nerdtree): fast filesystem browser, see everything!
 * [TagBar](https://github.com/majutsushi/tagbar): painless navigation of tags (functions, classes etc...).
@@ -41,6 +45,8 @@ Features
 
 Bindings
 --------
+
+* Global leader key: `,`
 * Disable Highlight: `<leader>space`
 * Disable Highlight (alt): `<ctrl>l`
 * Toggle NERDTree: `<leader>n`

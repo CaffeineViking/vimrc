@@ -57,7 +57,7 @@
     set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
     " The above autocompletion type will not call any external programs (it might however, use ctags).
     " set completeopt+=longest " Will only insert the longest obviously common match found so far...
-    let g:vcm_direction = 'p' " Pressing <tab> should/will give us the *closest* match backwards.
+    let g:vcm_direction='p' " Pressing <tab> should/will give us the *closest* match backwards.
 
     set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are completely freaking awesome!!!

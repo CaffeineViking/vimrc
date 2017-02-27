@@ -65,18 +65,17 @@
     set history=1024 " Defines the number of stored commands that Vim can remember, we have so much memory today it doesn't even matter.
 " }
 
-
-" Omnicompletions: { Basically, Vim's built-in auto-completion support with uniform keyboard shortcuts.
-    set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
+" Autocompletions: { Basically, Vim's built-in auto-completions support with uniform keyboard shortcuts.
+    " set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
     " The above autocompletion type will not call any external programs (it might however, use ctags).
     set completeopt+=longest " Attempts to insert longest obviously current common match found so far.
-    let g:SuperTabDefaultCompletionType='context' " Let SuperTab derive if we want omni-completion.
-    let g:SuperTabLongestEnhanced=1 " Improves upon the completeopt=longest settings given above.
-    let g:SuperTabCrMapping=1 " Sometimes we just don't want any completion, just press enter.
-    autocmd FileType * " If omni-completion doesn't find anything, we fall back to ins-comp.
-            \ if &omnifunc != '' | " If the current file type has omni support, we chain it.
-            \   call SuperTabChain(&omnifunc, "<c-p>") | " Meaning, we also call <c-p> here.
-            \ endif
+    " let g:SuperTabDefaultCompletionType='context' " Let SuperTab derive if we want omni-completion.
+    let g:SuperTabLongestEnhanced=1 " Improves upon the completeopt+=longest settings given above.
+    let g:SuperTabCrMapping=1 " Sometimes we just don't want any of the completions; press enter.
+    " autocmd FileType * " If omni-completion doesn't find anything, we fall back to ins-comp.
+    "         \ if &omnifunc != '' | " If the current file type has omni support, we chain it.
+    "         \   call SuperTabChain(&omnifunc, '<c-p>') | " Meaning, we also call <c-p> here.
+    "         \ endif
 " }
 
 " Formatting: {

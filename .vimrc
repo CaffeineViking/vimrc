@@ -29,9 +29,11 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin 'ajh17/VimCompletesMe' " Unobtrusive completions.
-        " SuperTab vs VimCompletesMe: the latter is chosen since
-        " the script is shorter (80 against 900 for SuperTab)...
+        Plugin 'ervandew/supertab' " For built-in autocompletes.
+        " SuperTab vs VimCompletesMe: while the code differences
+        " is huge (900 vs 80), VimCompletesMe does not offer the
+        " same quality of life features as SuperTab. Performance
+        " does not seem to be an issue tho, so SuperTab it is :)
     " }
 
     " Cosmetic: {
@@ -54,10 +56,6 @@
     set noswapfile " Don't create swap files, nowadays we should have enough memory to store a text file.
     set complete-=i " Completion list for all included files is a bad idea, scanning could take a while.
     set sessionoptions-=options " Don't store options (global variables etc...) when making a session.
-    set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
-    " The above autocompletion type will not call any external programs (it might however, use ctags).
-    " set completeopt+=longest " Will only insert the longest obviously common match found so far...
-    let g:vcm_direction='p' " Pressing <tab> should/will give us the *closest* match backwards.
 
     set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are completely freaking awesome!!!
@@ -65,6 +63,20 @@
     let mapleader=',' " Map <leader> to the ',' key. This is used to extend Vims functionality without overwriting any standard bindings.
     let g:mapleader=',' " Do this globally too. This vimrc tries to keep changes in standard behaviour to a very bare minimum.
     set history=1024 " Defines the number of stored commands that Vim can remember, we have so much memory today it doesn't even matter.
+" }
+
+
+" Omnicompletions: { Basically, Vim's built-in auto-completion support with uniform keyboard shortcuts.
+    set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
+    " The above autocompletion type will not call any external programs (it might however, use ctags).
+    set completeopt+=longest " Attempts to insert longest obviously current common match found so far.
+    let g:SuperTabDefaultCompletionType='context' " Let SuperTab derive if we want omni-completion.
+    let g:SuperTabLongestEnhanced=1 " Improves upon the completeopt=longest settings given above.
+    let g:SuperTabCrMapping=1 " Sometimes we just don't want any completion, just press enter.
+    autocmd FileType * " If omni-completion doesn't find anything, we fall back to ins-comp.
+            \ if &omnifunc != '' | " If the current file type has omni support, we chain it.
+            \   call SuperTabChain(&omnifunc, "<c-p>") | " Meaning, we also call <c-p> here.
+            \ endif
 " }
 
 " Formatting: {

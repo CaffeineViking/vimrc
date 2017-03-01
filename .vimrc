@@ -29,7 +29,7 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin "ajh17/VimCompletesMe" " Standardized auto-compl.
+        Plugin 'ajh17/VimCompletesMe' " Standardized auto-compl.
         " SuperTab vs VimCompletesMe: while the latter has fewer
         " features, it also has significantly less code/bloat...
         " However, I still wonder if the trade-offs is worth it.

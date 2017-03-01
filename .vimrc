@@ -29,11 +29,10 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin 'ervandew/supertab' " For built-in autocompletes.
-        " SuperTab vs VimCompletesMe: while the code differences
-        " is huge (900 vs 80), VimCompletesMe does not offer the
-        " same quality of life features as SuperTab. Performance
-        " does not seem to be an issue tho, so SuperTab it is :)
+        Plugin "ajh17/VimCompletesMe" " Standardized auto-compl.
+        " SuperTab vs VimCompletesMe: while the latter has fewer
+        " features, it also has significantly less code/bloat...
+        " However, I still wonder if the trade-offs is worth it.
     " }
 
     " Cosmetic: {
@@ -66,16 +65,12 @@
 " }
 
 " Autocompletions: { Basically, Vim's built-in auto-completions support with uniform keyboard shortcuts.
-    " set omnifunc=syntaxcomplete#Complete " Enables only the default Vim autocompletion (quite fast!!).
-    " The above autocompletion type will not call any external programs (it might however, use ctags).
-    set completeopt+=longest " Attempts to insert longest obviously current common match found so far.
-    " let g:SuperTabDefaultCompletionType='context' " Let SuperTab derive if we want omni-completion.
-    let g:SuperTabLongestEnhanced=1 " Improves upon the completeopt+=longest settings given above.
-    let g:SuperTabCrMapping=1 " Sometimes we just don't want any of the completions; press enter.
-    " autocmd FileType * " If omni-completion doesn't find anything, we fall back to ins-comp.
-    "         \ if &omnifunc != '' | " If the current file type has omni support, we chain it.
-    "         \   call SuperTabChain(&omnifunc, '<c-p>') | " Meaning, we also call <c-p> here.
-    "         \ endif
+    " We are using VimCompletesMe as the plugin of choice for making Vim's " built-in autocompletions be
+    " more uniformly handled with an single key: <Tab> and <Shift>-<Tab>. It will attempt to derive what
+    " the most suitable autocompletion function is to be called based on the context (omni, user etc...)
+    set omnifunc=syntaxcomplete#Complete   " Enables only the default Vim autocompletion (quite fast!!).
+    " The above autocompletion types will not call any external programs (it might however, call ctags).
+    set completeopt+=longest   " Attempts to insert longest obviously current common match found so far.
 " }
 
 " Formatting: {

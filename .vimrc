@@ -68,9 +68,10 @@
     " We are using VimCompletesMe as the plugin of choice for making Vim's " built-in autocompletions be
     " more uniformly handled with an single key: <Tab> and <Shift>-<Tab>. It will attempt to derive what
     " the most suitable autocompletion function is to be called based on the context (omni, user etc...)
-    set omnifunc=syntaxcomplete#Complete   " Enables only the default Vim autocompletion (quite fast!!).
+    set omnifunc=syntaxcomplete#Complete " Enables only the default Vim auto-completion (quite fast!!!).
     " The above autocompletion types will not call any external programs (it might however, call ctags).
-    set completeopt+=longest   " Attempts to insert longest obviously current common match found so far.
+    set completeopt+=longest " Attempts to insert longest obviously current common match found so far.
+    let g:vcm_direction='p' " First choice should be the *closest* matching entry (as Bram intended).
 " }
 
 " Formatting: {

@@ -230,5 +230,5 @@
     noremap <silent> <leader>t :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
-    noremap <silent> :silent! Y y$
+    noremap <silent> Y y$
 " }

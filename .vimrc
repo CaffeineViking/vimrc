@@ -225,5 +225,8 @@
     noremap <silent> <leader>t :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
-    noremap <silent> Y y$
+    " Here we have one of the things I and regular Vim
+    " disagree on. Both 'C' and 'D' behave as c$ or d$
+    " while Y behaves as yy. I don't like this at all.
+    nmap Y y$
 " }

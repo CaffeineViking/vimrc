@@ -173,6 +173,7 @@
         let g:NERDTreeShowLineNumbers = 1
         " Enable awesome relative line numbers here too.
         autocmd FileType nerdtree setlocal relativenumber
+
         let g:tagbar_show_linenumbers = -1 " Global conf.
         let g:NERDTreeWinPos = "right"
         let g:gundo_right = 1 " right
@@ -199,8 +200,14 @@
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' }
             \ } " Enable a bunch of nice powerline stuff for lightline. Requires a patched font e.g.: Hack...
-            set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Hack:h10 on Windows, MacOS should work?
-            set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power of vim is without mouses!
+            set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power is in not using mouses!
+
+            if has("win32")
+                set guifont=Hack:h10,Monospace:h10 " Nice programming font. Uses the weird window font names.
+            else
+                set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Uses the default *nix font names.
+            endif
+
         else
             " Good-old shell...
             set mouse=a " Nubs.

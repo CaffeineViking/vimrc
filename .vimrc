@@ -15,7 +15,7 @@
 
     set rtp+=~/.vim_bundle/Vundle.vim " Specify the Vim runtime path...
     call vundle#begin('~/.vim_bundle') " The package install directory.
-    Plugin 'gmarik/Vundle.vim' " Useful if Vundle itself has updates.
+    Plugin 'VundleVim/Vundle.vim' " Useful if Vundle itself has update.
 " }
 
 " Plugins: {

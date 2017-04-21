@@ -26,7 +26,7 @@ If the script doesn't work (maybe you are running Windows or MacOS) you can just
 Features
 --------
 
-* [Vundle](http://github.com/gmarik/vundle): an awesome package manager.
+* [Vundle](http://github.com/VundleVim/vundle): an awesome package manager.
 * [NERDTree](https://github.com/scrooloose/nerdtree): fast filesystem browser, see everything!
 * [TagBar](https://github.com/majutsushi/tagbar): painless navigation of tags (functions, classes etc...).
 * [Fugitive](https://github.com/tpope/vim-fugitive): easily one of the best Git integrators for Vim.

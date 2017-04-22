@@ -23,6 +23,7 @@
         Plugin 'tpope/vim-repeat' " Extend the Vim '.' operator.
         Plugin 'tpope/vim-commentary.git' " Comment stuff out...
         Plugin 'tpope/vim-surround' " Change (){}<>'' in a snap.
+        Plugin 'godlygeek/tabular' " Easy automatic tabulations.
         Plugin 'scrooloose/nerdtree' " Better than NetRw, maybe.
         Plugin 'majutsushi/tagbar' " Nice to get a code topview.
         Plugin 'tpope/vim-fugitive' " Probably best Git wrapper.
@@ -227,14 +228,21 @@
     " Will remove the latest search/replace highlight.
     noremap <silent> <leader><space> :silent! nohl<cr>
     nnoremap <silent> <C-L> :silent! nohl<cr><C-L>
+
     " Useful to toggle the NERDTree window back and forth.
     noremap <silent> <leader>n :silent! NERDTreeToggle<cr>
     " Same thing as above, but for the TagBar plugin...
     noremap <silent> <leader>t :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
+
     " Here we have one of the things I and regular Vim
     " disagree on. Both 'C' and 'D' behave as c$ or d$
     " while Y behaves as yy. I don't like this at all.
     nmap Y y$
+
+    " Shortcut Ag searching.
+    noremap <leader>a :Ack! 
+    " Shortcut for Tabulate.
+    noremap <leader>b :Tab /
 " }

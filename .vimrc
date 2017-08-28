@@ -72,6 +72,7 @@
     set omnifunc=syntaxcomplete#Complete " Enables only the default Vim auto-completion (quite fast!!!).
     " The above autocompletion types will not call any external programs (it might however, call ctags).
     set completeopt+=longest " Attempts to insert longest obviously current common match found so far.
+    set completeopt-=preview " Sometimes the [Scratch] preview window will pop-up. We don't want that.
     let g:vcm_direction='p' " First choice should be the *closest* matching entry (as Bram intended).
 " }
 

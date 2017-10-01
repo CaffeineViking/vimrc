@@ -166,17 +166,16 @@
     " }
 
     " Windows: {
-        " Make the window size
-        " consistent 48 width.
         let g:gundo_width = 48
         let g:tagbar_width = 48
         let g:NERDTreeWinSize = 48
         let g:NERDTreeMinimalUI = 1
         let g:NERDTreeShowLineNumbers = 1
-        " Enable awesome relative line numbers here too.
         autocmd FileType nerdtree setlocal relativenumber
-
         let g:tagbar_show_linenumbers = -1 " Global conf.
+
+        let g:gundo_preview_height = 13
+        let g:gundo_preview_bottom = 1
         let g:NERDTreeWinPos = "right"
         let g:gundo_right = 1 " right
         let g:tagbar_autofocus = 1

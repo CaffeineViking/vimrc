@@ -59,8 +59,8 @@
     set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are completely freaking awesome!!!
 
-    let mapleader='\<Space>' " This vimrc frowns on overwritten vim bindings, I use the ',' quite a lot.
-    let g:mapleader='\<Space>' " It is very rare to see Vim user use <Space> in normal mode, hence this.
+    let mapleader="\<Space>" " This vimrc frowns on overwritten vim bindings, I use the ',' quite a lot.
+    let g:mapleader="\<Space>" " It is very rare to see Vim user use <Space> in normal mode, hence this.
     set history=1024 " Defines the number of stored commands Vim can remember, doesn't really matter :).
 " }
 

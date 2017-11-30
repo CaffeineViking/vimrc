@@ -37,7 +37,6 @@
     " }
 
     " Cosmetic: {
-        Plugin 'mkitt/tabline.vim' " Provides e.g. tab numbers!!
         Plugin 'itchyny/lightline.vim' " For lightweight tbline.
         Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
     "}
@@ -60,9 +59,9 @@
     set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
     set undofile " Persistent undos are completely freaking awesome!!!
 
-    let mapleader=',' " Map <leader> to the ',' key. This is used to extend Vims functionality without overwriting any standard bindings.
-    let g:mapleader=',' " Do this globally too. This vimrc tries to keep changes in standard behaviour to a very bare minimum.
-    set history=1024 " Defines the number of stored commands that Vim can remember, we have so much memory today it doesn't even matter.
+    let mapleader='\<Space>' " This vimrc frowns on overwritten vim bindings, I use the ',' quite a lot.
+    let g:mapleader='\<Space>' " It is very rare to see Vim user use <Space> in normal mode, hence this.
+    set history=1024 " Defines the number of stored commands Vim can remember, doesn't really matter :).
 " }
 
 " Autocompletions: { Basically, Vim's built-in auto-completions support with uniform keyboard shortcuts.
@@ -225,14 +224,13 @@
 " }
 
 " Mappings: {
-    " Will remove the latest search/replace highlight.
-    noremap <silent> <leader><space> :silent! nohl<cr>
+    " Will remove latest search/replace highlight.
     nnoremap <silent> <C-L> :silent! nohl<cr><C-L>
 
     " Useful to toggle the NERDTree window back and forth.
-    noremap <silent> <leader>n :silent! NERDTreeToggle<cr>
+    noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
     " Same thing as above, but for the TagBar plugin...
-    noremap <silent> <leader>t :silent! TagbarToggle<cr>
+    noremap <silent> <leader>s :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
 
@@ -242,7 +240,7 @@
     nmap Y y$
 
     " Shortcut Ag searching.
-    noremap <leader>a :Ack! 
+    noremap <leader>f :Ack! 
     " Shortcut for Tabulate.
-    noremap <leader>b :Tab /
+    noremap <leader>a :Tab /
 " }

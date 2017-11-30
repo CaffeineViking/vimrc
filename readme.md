@@ -35,7 +35,6 @@ Features
 * [Vim-Surround](https://github.com/tpope/vim-surround): enables one to manipulate e.g. (){}<> directly.
 * [GUndo](https://github.com/sjl/gundo.vim): graphical visualization of the Vim undo tree and diffs for them.
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe): simple and lightweight built-in auto-completions.
-* [TabLine](https://github.com/mkitt/tabline.vim): improved tab output, no clutter.
 * [LightLine](https://github.com/itchyny/lightline.vim): minimal and lightweight statusline/tabline.
 * [Tabular](https://github.com/godlygeek/tabular): automatically tabulates (boring) stuff for you.
 * [Vim-Repeat](https://github.com/tpope/vim-repeat): extends vim's '.' operator usage.
@@ -49,13 +48,12 @@ Features
 Bindings
 --------
 
-* Global leader key: `,`
-* Disable Highlight: `<leader>space`
-* Disable Highlight (alt): `<ctrl>l`
-* Tabulate it baby!: `<leader>b`
-* Opens Ack search: `<leader>a`
-* Toggle NERDTree: `<leader>n`
-* Toggle TagBar: `<leader>t`
+* Global leader key: `<space>`
+* Disable Highlight: `<ctrl>l`
+* Tabulate it baby!: `<leader>a`
+* Opens Ack search: `<leader>f`
+* Toggle NERDTree: `<leader>d`
+* Toggle TagBar: `<leader>s`
 * Toggle GUndo: `<leader>g`
 
 Screenshot

@@ -230,7 +230,7 @@
     " Useful to toggle the NERDTree window back and forth.
     noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
     " Same thing as above, but for the TagBar plugin...
-    noremap <silent> <leader>s :silent! TagbarToggle<cr>
+    noremap <silent> <leader>f :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
 
@@ -240,7 +240,7 @@
     nmap Y y$
 
     " Shortcut Ag searching.
-    noremap <leader>f :Ack! 
+    noremap <leader>s :Ack! 
     " Shortcut for Tabulate.
     noremap <leader>a :Tab /
 " }

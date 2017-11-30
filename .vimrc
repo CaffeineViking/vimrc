@@ -177,6 +177,7 @@
         let g:gundo_preview_bottom = 1
         let g:NERDTreeWinPos = "right"
         let g:gundo_right = 1 " right
+        let g:tagbar_map_showproto=""
         let g:tagbar_autofocus = 1
         let g:tagbar_compact = 1
         let g:gundo_help = 0
@@ -230,7 +231,7 @@
     " Useful to toggle the NERDTree window back and forth.
     noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
     " Same thing as above, but for the TagBar plugin...
-    noremap <silent> <leader>f :silent! TagbarToggle<cr>
+    noremap <silent> <leader>s :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
 
@@ -240,7 +241,7 @@
     nmap Y y$
 
     " Shortcut Ag searching.
-    noremap <leader>s :Ack! 
+    noremap <leader>f :Ack! 
     " Shortcut for Tabulate.
     noremap <leader>a :Tab /
 " }

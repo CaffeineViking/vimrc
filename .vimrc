@@ -139,11 +139,7 @@
         endfunction
         function! LightLineReadonly()
             if &readonly
-                if has("gui_running")
-                    return ""
-                else
-                    return "RO"
-                endif
+                return ""
             else
                 return ""
             endif
@@ -151,10 +147,7 @@
         function! LightLineFugitive()
             if exists("*fugitive#head")
                 let branch = fugitive#head()
-                if has("gui_running")
-                    return branch !=# '' ? ' '.branch : ' [No Head]'
-                else
-                    return branch !=# '' ? branch : '[No Head]'
+                return branch !=# '' ? ' '.branch : ' [No Head]'
             endif
             return ''
         endfunction
@@ -186,30 +179,6 @@
 
     " Graphical: {
         if has("gui_running")
-            let g:lightline = {
-            \ 'colorscheme': 'gruvbox',
-            \ 'active': {
-            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
-            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
-            \ },
-            \ 'inactive': {
-            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
-            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
-            \ },
-            \ 'component': {
-            \   'linenums': '%l/%L ☰',
-            \   'filetype': '%{&ft!=#""?&ft:"[No Type]"}'
-            \ },
-            \ 'component_function': {
-            \   'fugitive': 'LightLineFugitive',
-            \   'readonly': 'LightLineReadonly',
-            \   'modified': 'LightLineModified',
-            \   'filename': 'LightLineFilename',
-            \ },
-            \ 'separator':    { 'left': '', 'right': '' },
-            \ 'subseparator': { 'left': '', 'right': '' }
-            \ }
-
             set guioptions=i " Kill them toolbars!
             if has("win32")
                 set guifont=Hack:h10,Monospace:h10
@@ -217,29 +186,33 @@
                 set guifont=Hack\ 10,Monospace\ 10
             endif
         else
-            set mouse=a
-            let g:lightline = {
-            \ 'colorscheme': 'gruvbox',
-            \ 'active': {
-            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
-            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
-            \ },
-            \ 'inactive': {
-            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
-            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
-            \ },
-            \ 'component': {
-            \   'linenums': '%l/%L =',
-            \   'filetype': '%{&ft!=#""?&ft:"[No Type]"}'
-            \ },
-            \ 'component_function': {
-            \   'fugitive': 'LightLineFugitive',
-            \   'readonly': 'LightLineReadonly',
-            \   'modified': 'LightLineModified',
-            \   'filename': 'LightLineFilename',
-            \ }
-            \ }
+            set mouse=a " Mouse support if needed.
         endif
+
+        " A LightLine Theme
+        let g:lightline = {
+        \ 'colorscheme': 'gruvbox',
+        \ 'active': {
+        \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
+        \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
+        \ },
+        \ 'inactive': {
+        \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
+        \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
+        \ },
+        \ 'component': {
+        \   'linenums': '☰  %3l/%L:%-2c',
+        \   'filetype': '%{&ft!=#""?&ft:"[No Type]"}'
+        \ },
+        \ 'component_function': {
+        \   'fugitive': 'LightLineFugitive',
+        \   'readonly': 'LightLineReadonly',
+        \   'modified': 'LightLineModified',
+        \   'filename': 'LightLineFilename',
+        \ },
+        \ 'separator':    { 'left': '', 'right': '' },
+        \ 'subseparator': { 'left': '', 'right': '' }
+        \ }
     " }
 
     set list " Enables the characters to be displayed.

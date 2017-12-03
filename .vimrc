@@ -129,23 +129,21 @@
     set background=dark " Cool programmers only use dark themes. It's good for your eyes man, really nice!
     silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
 
-    " LightLine Settings: {
+    " LightLine Components: {
         function! LightLineModified()
-            if &filetype == "help"
-                return ""
-            elseif &modified
+            if &modified
                 return "+"
-            elseif &modifiable
-                return ""
             else
                 return ""
             endif
         endfunction
         function! LightLineReadonly()
-            if &filetype == "help"
-                return ""
-            elseif &readonly
-                return ""
+            if &readonly
+                if has("gui_running")
+                    return ""
+                else
+                    return "RO"
+                endif
             else
                 return ""
             endif
@@ -153,13 +151,16 @@
         function! LightLineFugitive()
             if exists("*fugitive#head")
                 let branch = fugitive#head()
-                return branch !=# '' ? ' '.branch : ''
+                if has("gui_running")
+                    return branch !=# '' ? ' '.branch : ' [No Head]'
+                else
+                    return branch !=# '' ? branch : '[No Head]'
             endif
             return ''
         endfunction
         function! LightLineFilename()
             return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-                 \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+                 \ ('' != expand('%:f') ? expand('%:f') : '[No Name]') .
                  \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
         endfunction
     " }
@@ -185,36 +186,58 @@
 
     " Graphical: {
         if has("gui_running")
-            " Pretty nice here.
             let g:lightline = {
             \ 'colorscheme': 'gruvbox',
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'fugitive', 'filename' ] ]
+            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
+            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
+            \ },
+            \ 'inactive': {
+            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
+            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
+            \ },
+            \ 'component': {
+            \   'linenums': '%l/%L ☰',
+            \   'filetype': '%{&ft!=#""?&ft:"[No Type]"}'
             \ },
             \ 'component_function': {
             \   'fugitive': 'LightLineFugitive',
             \   'readonly': 'LightLineReadonly',
             \   'modified': 'LightLineModified',
-            \   'filename': 'LightLineFilename'
+            \   'filename': 'LightLineFilename',
             \ },
-            \ 'separator': { 'left': '', 'right': '' },
+            \ 'separator':    { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' }
-            \ } " Enable a bunch of nice powerline stuff for lightline. Requires a patched font e.g.: Hack...
-            set guioptions=i " Will disable all nasty GUI toolbars on gvim, the power is in not using mouses!
+            \ }
 
+            set guioptions=i " Kill them toolbars!
             if has("win32")
-                set guifont=Hack:h10,Monospace:h10 " Nice programming font. Uses the weird window font names.
+                set guifont=Hack:h10,Monospace:h10
             else
-                set guifont=Hack\ 10,Monospace\ 10 " Nice programming font. Uses the default *nix font names.
+                set guifont=Hack\ 10,Monospace\ 10
             endif
-
         else
-            " Good-old shell...
-            set mouse=a " Nubs.
+            set mouse=a
             let g:lightline = {
             \ 'colorscheme': 'gruvbox',
-            \ 'subseparator': { 'left': '', 'right': '' }
+            \ 'active': {
+            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
+            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
+            \ },
+            \ 'inactive': {
+            \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
+            \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
+            \ },
+            \ 'component': {
+            \   'linenums': '%l/%L =',
+            \   'filetype': '%{&ft!=#""?&ft:"[No Type]"}'
+            \ },
+            \ 'component_function': {
+            \   'fugitive': 'LightLineFugitive',
+            \   'readonly': 'LightLineReadonly',
+            \   'modified': 'LightLineModified',
+            \   'filename': 'LightLineFilename',
+            \ }
             \ }
         endif
     " }

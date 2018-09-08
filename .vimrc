@@ -181,7 +181,10 @@
         if has("gui_running")
             set guioptions=i " Kill them toolbars!
             if has("win32")
+                set shellslash " Fix for Fugitive.
                 set guifont=Hack:h10,Monospace:h10
+                " Below we inject a DLL that removes the annoying GTK padding when using Win32.
+                map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
             else
                 set guifont=Hack\ 10,Monospace\ 10
             endif

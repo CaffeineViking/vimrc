@@ -42,7 +42,7 @@
     "}
 
     " Syntaxes: {
-        Plugin "tikhomirov/vim-glsl" " Syntax highlight in GLSL.
+        Plugin 'tikhomirov/vim-glsl' " Syntax highlight in GLSL.
     "}
 " }
 

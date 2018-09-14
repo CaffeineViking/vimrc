@@ -40,6 +40,10 @@
         Plugin 'itchyny/lightline.vim' " For lightweight tbline.
         Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
     "}
+
+    " Syntaxes: {
+        Plugin "tikhomirov/vim-glsl" " Syntax highlight in GLSL.
+    "}
 " }
 
 " Preliminaries: {
@@ -148,6 +152,8 @@
             if exists("*fugitive#head")
                 let branch = fugitive#head()
                 return branch !=# '' ? ' '.branch : ' [No Head]'
+            else
+                return ' [No Head]'
             endif
             return ''
         endfunction

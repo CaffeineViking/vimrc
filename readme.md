@@ -59,4 +59,4 @@ Bindings
 Screenshot
 ----------
 
-![preview](https://caffeineviking.net/share/images/vimrc.png)
+![preview](preview.png)

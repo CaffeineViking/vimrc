@@ -240,8 +240,6 @@
     noremap <silent> <leader>s :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
-    " Handy shortcut to dispatch the async job to make.
-    noremap <silent> <leader><leader> :silent! Make<cr>
 
     " Here we have one of the things I and regular Vim
     " disagree on. Both 'C' and 'D' behave as c$ or d$

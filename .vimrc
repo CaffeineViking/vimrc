@@ -31,6 +31,7 @@
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
         Plugin 'ajh17/VimCompletesMe' " Standardized auto-compl.
+        Plugin 'tpope/vim-dispatch' " When launching async jobs.
         " SuperTab vs VimCompletesMe: while the latter has fewer
         " features, it also has significantly less code/bloat...
         " However, I still wonder if the trade-offs is worth it.
@@ -239,6 +240,8 @@
     noremap <silent> <leader>s :silent! TagbarToggle<cr>
     " For another window, this time for the GUndo tree.
     noremap <silent> <leader>g :silent! GundoToggle<cr>
+    " Handy shortcut to dispatch the async job to make.
+    noremap <silent> <leader><leader> :silent! Make<cr>
 
     " Here we have one of the things I and regular Vim
     " disagree on. Both 'C' and 'D' behave as c$ or d$

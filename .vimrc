@@ -43,7 +43,8 @@
     "}
 
     " Syntaxes: {
-        Plugin 'tikhomirov/vim-glsl' " Syntax highlight in GLSL.
+        Plugin 'CaffeineViking/vim-glsl' " Add support for GLSL.
+        Plugin 'kbenzie/vim-spirv.git' " SPIRV syntax highlight.
     "}
 " }
 

@@ -1,9 +1,11 @@
 Sane, Lightweight and Aesthetic Vim
 ===================================
 
-Here is my personal Vim/NeoVim setup, which has been written (and documented) from the ground-up, tried-and-tested for several years by myself and several colleagues. It's built on the premise that regular Vim is awesome, and any additions in this configuration should be made to "enhance" the original Vim experience (not replace it). Therefore, you'll find that none of the bindings have been overwritten, and only a selected few packages have been included (and if you don't like some of them, feel free to remove them, which only requires a couple of lines to be changed). Most importantly, the configuration will and more sane defaults to Vim (outdated things carried over from Vi), or tasks that are better done with other tools (e.g.  Git).
+![preview](preview.png)
 
-I hope you will find this configuration useful as well. Please enjoy, and happy hacking!
+Here is my personal Vim/NeoVim setup, which has been written (and documented) from the ground-up, tried-and-tested for several years by myself and several colleagues. It's built on the premise that regular Vim is awesome, and any additions in this configuration should be made to "enhance" the original Vim experience (not replace it). Therefore, you'll find that none of the bindings have been overwritten, and only a selected few packages have been included (and if you don't like some of them, feel free to remove them, which only requires a couple of lines to be changed). More importantly, the configuration provides more sane defaults to Vim, just as in [tpope/vim-sensible](https://github.com/tpope/vim-sensible).
+
+I hope you will find this Vim configuration useful. Please enjoy, and many happy hacking nights for you! If you think something should be changed, or if you've found a bug, please open a issue or a PR, and I'll take a look at it. I'm fairly happy with my current setup, but I am always open to considering small changes (especially if they can make my life easier as well!).
 
 Installation
 ------------
@@ -55,8 +57,4 @@ Bindings
 * Toggle NERDTree: `<leader>d`
 * Toggle TagBar: `<leader>s`
 * Toggle GUndo: `<leader>g`
-
-Screenshot
-----------
-
-![preview](preview.png)
+* Run "Make": `m<return>`

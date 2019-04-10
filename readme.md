@@ -1,5 +1,5 @@
-Sane, Lightweight and Aesthetic Vim
-===================================
+Sane, Lightweight, and Aesthetic Vim
+====================================
 
 ![preview](preview.png)
 

@@ -17,15 +17,15 @@ git clone https://github.com/CaffeineViking/vimrc.git ~/.vim_temp && \
 cd ~/.vim_temp && ./setup.sh && rm -rf ~/.vim_temp && cd ~
 ```
 
-If the script doesn't work (maybe you are running Windows or MacOS) you can just follow the steps below:
+If the script doesn't work automatically, you can just follow these simple steps:
 
-1. Remove (backup) your existing .vimrc and related folders from your home directory.
-2. Download this repository, just copy over the .vimrc to your home directory.
-3. Create two folders, `.vim_bundle` and `.vim_undoes` in your home directory.
-4. Fetch the source from the Vundle repository. Put it in `.vim_bundle/Vundle.vim`.
-5. Probably install the `Hack` font too, which has support for powerline.
-6. Run vim and call `:PluginInstall`.
-7. Done! Please enjoy.
+1. Backup your existing `.vimrc` and related folders from your home directory
+2. Download this repository, just copy over the .vimrc to your home directory
+3. Create two folders, `.vim_bundle` and `.vim_undoes` in your home directory
+4. Fetch the data from `Vundle` repository. Put it in `.vim_bundle/Vundle.vim`
+5. Run vim and call `:PluginInstall` (make sure you have `git` installed too!)
+
+**Optional** (but highly recommended): install  [`Hack`](https://github.com/source-foundry/Hack) fonts (with `powerline` support) and copy [`gvimfullscreen.dll`](https://github.com/elmindreda/gvimfullscreen_win32) to your `Vim` install directory on Windows (e.g. `C:\Program Files\Vim\vim82`). The one I have is patched for Gruvbox.
 
 Features
 --------

@@ -42,7 +42,8 @@
         Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
     "}
 
-    " Syntaxes: {
+    " Language: {
+        Plugin 'beyondmarc/hlsl.vim' " Integrate HLSL highlight.
         Plugin 'CaffeineViking/vim-glsl' " Add support for GLSL.
         Plugin 'kbenzie/vim-spirv.git' " SPIRV syntax highlight.
     "}
@@ -54,6 +55,7 @@
 " }
 
 " General: {
+    set viminfo+=n~/.viminfo " Windows wants to use _viminfo >:(
     set autowrite " Write automatically when :make, :next etc...
     set autoread " Reload file when it has been changed externally.
     set nobackup " No need for .bkp files when version control exist.

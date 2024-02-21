@@ -197,12 +197,8 @@
             if has("win32")
                 set shellslash " Fix for Fugitive.
                 set guifont=Hack:h10,Monospace:h10
-                " Below we load a DLL which removes annoying GTK padding to get borderless fullscreen!
-                if has("win64")
-                    map <F11> <Esc>:call libcallnr("gvimfullscreen_64.dll", "ToggleFullScreen", 0)<CR>
-                else
-                    map <F11> <Esc>:call libcallnr("gvimfullscreen_32.dll", "ToggleFullScreen", 0)<CR>
-                endif
+                " Below we load a DLL which removes the ugly GTK padding when going fullscreen.
+                map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
             else
                 set guifont=Hack\ 10,Monospace\ 10
             endif

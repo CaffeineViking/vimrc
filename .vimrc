@@ -30,8 +30,9 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin 'ajh17/VimCompletesMe' " Standardized auto-compl.
+        Plugin 'vim-scripts/VimCompletesMe' " Fast autocomplete!
         Plugin 'tpope/vim-dispatch' " When launching async jobs.
+        Plugin 'ngemily/vim-vp4' " Minimal Perforce integration.
         " SuperTab vs VimCompletesMe: while the latter has fewer
         " features, it also has significantly less code/bloat...
         " However, I still wonder if the trade-offs is worth it.
@@ -46,6 +47,8 @@
         Plugin 'beyondmarc/hlsl.vim' " Integrate HLSL highlight.
         Plugin 'CaffeineViking/vim-glsl' " Add support for GLSL.
         Plugin 'kbenzie/vim-spirv.git' " SPIRV syntax highlight.
+        Plugin 'CaffeineViking/vim-pica200' " PICA200 assembler.
+    "}
     "}
 " }
 

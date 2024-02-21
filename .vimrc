@@ -115,6 +115,7 @@
     set scrolloff=8 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
     set foldmethod=indent " Pressing zc will close a fold at the current indent while zo will open one.
     set foldopen+=jump " Additionally, open folds when there is a direct jump to the location.
+    set nofoldenable " Disable folding by default, but allow it to be toggled back on with zi.
 
     set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
     set cursorline " For easier cursor spotting. Completely optional though (but so is bathing).

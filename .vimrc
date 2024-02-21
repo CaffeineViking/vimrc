@@ -195,6 +195,7 @@
         if has("gui_running")
             set guioptions=i " Kill them toolbars!
             if has("win32")
+                set renderoptions=type:directx " Use DirectX to e.g. render font with ligature.
                 set shellslash " Fix for Fugitive.
                 set guifont=Hack:h10,Monospace:h10
                 " Below we load a DLL which removes the ugly GTK padding when going fullscreen.

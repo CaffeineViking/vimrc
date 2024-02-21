@@ -157,8 +157,8 @@
             endif
         endfunction
         function! LightLineFugitive()
-            if exists("*fugitive#head")
-                let branch = fugitive#head()
+            if exists("*FugitiveHead")
+                let branch = FugitiveHead()
                 return branch !=# '' ? ' '.branch : ' [No Head]'
             else
                 return ' [No Head]'

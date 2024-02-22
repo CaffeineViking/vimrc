@@ -32,6 +32,7 @@
     " Cosmetic: {
         Plugin 'itchyny/lightline.vim' " For lightweight tbline.
         Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
+        Plugin 'luochen1990/rainbow' " Rainbow brackets for Vim!
     "}
 
     " Language: {
@@ -223,6 +224,7 @@
         \ 'separator':    { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
         \ }
+        let g:rainbow_active = 1 " Enable rainbow brackets...
     " }
 
     set list " Enables the characters to be displayed.

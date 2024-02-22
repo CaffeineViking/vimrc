@@ -1,5 +1,5 @@
-Sane, Lightweight, and Aesthetic Vim
-====================================
+Sane, Lightweight and a e s t h e t i c .vimrc
+==============================================
 
 ![preview](preview.png)
 
@@ -25,7 +25,9 @@ If the script doesn't work automatically, you can just follow these simple steps
 4. Fetch the data from `Vundle` repository. Put it in `.vim_bundle/Vundle.vim`
 5. Run vim and call `:PluginInstall` (make sure you have `git` installed too!)
 
-**Optional** (but highly recommended): install  [`Hack`](https://github.com/source-foundry/Hack) fonts (with `powerline` support) and copy [`gvimfullscreen.dll`](https://github.com/elmindreda/gvimfullscreen_win32) to your `Vim` install directory on Windows (e.g. `C:\Program Files\Vim\vim82`). The one I have is patched for Gruvbox.
+You should also install [Iosevka](https://github.com/be5invis/Iosevka) fonts which have powerline and ligature support.
+
+For the Win32-version of gvim you might want to copy `gvimfullscreen.dll` to `C:\Program Files\Vim\vim91` to be able to use F11 to go into borderless fullscreen. The copy bundled here (originally based on [this](https://github.com/leonid-shevtsov/gvimfullscreen_win32)) also fixes issues where the background color wouldn't match gruvbox.
 
 Features
 --------

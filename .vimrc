@@ -1,13 +1,4 @@
-"
-" __   _(-)_ __ ___  _ __ ___
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__
-"   \_/ |_|_| |_| |_|_|  \___|
-" ============================
-" Sane, Lightweight, Aesthetic
-"
-"    --Erik S. V. Jansson--
-"
+" Sane, Lightweight and a e s t h e t i c .vimrc by Erik S. V. Jansson.
 
 " Initialization: {
     set nocompatible " Enable features which aren't compatible with Vi.
@@ -73,6 +64,7 @@
     let mapleader="\<Space>" " This vimrc frowns on overwritten vim bindings, I use the ',' quite a lot.
     let g:mapleader="\<Space>" " It is very rare to see Vim user use <Space> in normal mode, hence this.
     set history=1024 " Defines the number of stored commands Vim can remember, doesn't really matter :).
+    set belloff=all " Disable audio bell that constantly goes off in Windows version of gvim at least...
 " }
 
 " Autocompletions: { Basically, Vim's built-in auto-completions support with uniform keyboard shortcuts.
@@ -159,7 +151,7 @@
         function! LightLineFugitive()
             if exists("*FugitiveHead")
                 let branch = FugitiveHead()
-                return branch !=# '' ? ' '.branch : ' [No Head]'
+                return branch !=# '' ? ' '.branch : ' [No Head]' " Detached...?
             else
                 return ' [No Head]'
             endif
@@ -197,11 +189,11 @@
             if has("win32")
                 set renderoptions=type:directx " Use DirectX to e.g. render font with ligature.
                 set shellslash " Fix for Fugitive.
-                set guifont=Hack:h10,Monospace:h10
+                set guifont=Iosevka:h12,Fira\ Code:h10,Hack:h10 " All of these fonts are great!
                 " Below we load a DLL which removes the ugly GTK padding when going fullscreen.
                 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
             else
-                set guifont=Hack\ 10,Monospace\ 10
+                set guifont=Iosevka\ 12,Fira\ Code\ 10,Hack\ 10 " All of these fonts are great!
             endif
         else
             set mouse=a " Mouse support if needed.
@@ -219,7 +211,7 @@
         \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]
         \ },
         \ 'component': {
-        \   'linenums': '☰  %3l/%L:%-2c',
+        \   'linenums': ' %3l  %-2c',
         \   'filetype': '%{&ft!=#""?&ft:"[No Type]"}'
         \ },
         \ 'component_function': {

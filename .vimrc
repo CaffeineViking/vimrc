@@ -64,6 +64,7 @@
     let mapleader="\<Space>" " This vimrc frowns on overwritten vim bindings, I use the ',' quite a lot.
     let g:mapleader="\<Space>" " It is very rare to see Vim user use <Space> in normal mode, hence this.
     set history=1024 " Defines the number of stored commands Vim can remember, doesn't really matter :).
+
     set belloff=all " Disable audio bell that constantly goes off in Windows version of gvim at least...
 " }
 

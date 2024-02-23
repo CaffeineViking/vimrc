@@ -99,10 +99,12 @@
     set hlsearch " Will stop highlighting current search 'hits' when another search is performed.
     set magic " Enables regular expressions. They are a bit like magic (not really though, DFA).
 
-    " Ack and Ag are incredibly useful for searching really fast, forget slow IDE searching.
-    if executable('ag') " The Silver Searcher, faster than 'ack' (mostly)
-        let g:ackprg = 'ag --vimgrep' " Enables ag compat. with vim.
-    endif " Will use 'ag' if exists, otherwise uses normal Ack.
+    " Tries to use a better program than 'Ack' for searching through code, such as 'ag' or 'rg'.
+    if     executable('rg')
+        let g:ackprg = 'rg --vimgrep' " ripgrep
+    elseif executable('ag')
+        let g:ackprg = 'ag --vimgrep' " the_silver_searcher
+    endif
 " }
 
 " Interface: {

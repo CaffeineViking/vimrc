@@ -41,7 +41,6 @@
         Plugin 'kbenzie/vim-spirv.git' " SPIRV syntax highlight.
         Plugin 'CaffeineViking/vim-pica200' " PICA200 assembler.
     "}
-    "}
 " }
 
 " Preliminaries: {
@@ -105,6 +104,11 @@
     elseif executable('ag')
         let g:ackprg = 'ag --vimgrep' " the_silver_searcher
     endif
+
+    " Enable the good stuff
+    let g:ackhighlight  = 1
+    let g:ack_autoclose = 1
+    let g:ackpreview    = 1
 " }
 
 " Interface: {
@@ -226,6 +230,7 @@
         \ 'separator':    { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
         \ }
+
         let g:rainbow_active = 1 " Enable rainbow brackets...
     " }
 

@@ -105,6 +105,11 @@
     elseif executable('ag')
         let g:ackprg = 'ag --vimgrep' " the_silver_searcher
     endif
+
+    " Enable the good stuff
+    let g:ackhighlight  = 1
+    let g:ack_autoclose = 1
+    let g:ackpreview    = 1
 " }
 
 " Interface: {

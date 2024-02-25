@@ -24,9 +24,6 @@
         Plugin 'vim-scripts/VimCompletesMe' " Fast autocomplete!
         Plugin 'tpope/vim-dispatch' " When launching async jobs.
         Plugin 'ngemily/vim-vp4' " Minimal Perforce integration.
-        " SuperTab vs VimCompletesMe: while the latter has fewer
-        " features, it also has significantly less code/bloat...
-        " However, I still wonder if the trade-offs is worth it.
     " }
 
     " Cosmetic: {

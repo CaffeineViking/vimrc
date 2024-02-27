@@ -202,6 +202,7 @@
             else
                 set guifont=Iosevka\ 12,Fira\ Code\ 10,Hack\ 10 " All of these fonts are great!
             endif
+            set guiligatures=!*+-/:<=>\|~ " These are the only ligatures that Iosevka supports.
         else
             set mouse=a " Mouse support if needed.
         endif

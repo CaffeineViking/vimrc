@@ -27,8 +27,9 @@
     " }
 
     " Cosmetic: {
-        Plugin 'itchyny/lightline.vim' " For lightweight tbline.
-        Plugin 'morhetz/gruvbox' " The most amazing colorscheme.
+        Plugin 'itchyny/lightline.vim' " A lightweight tab line.
+        Plugin 'morhetz/gruvbox' " The most amazing colorscheme!
+        Plugin 'sainnhe/gruvbox-material' " A nicer alternative.
         Plugin 'luochen1990/rainbow' " Rainbow brackets for Vim!
     "}
 
@@ -137,8 +138,11 @@
     set laststatus=2 " Always have a status line, this is required in order for Lightline to work correctly.
     set noshowmode " Disables standard -INSERT-, -NORMAL-, etc... Lightline will provide a better looking one for us.
     set t_Co=256 " This will 'force' terminals to use 256 colors, enabling Lightline and the colorscheme to look correct.
+    if has('termguicolors')
+        set termguicolors
+    endif
     set background=dark " Cool programmers only use dark themes. It's good for your eyes man, really nice!
-    silent! colorscheme gruvbox " I love this theme. Big kudos to the developer of this theme.
+    silent! colorscheme gruvbox-material " I love this theme. Big kudos to the developer(s) of this theme.
 
     " LightLine Components: {
         function! LightLineModified()
@@ -209,7 +213,7 @@
 
         " A LightLine Theme
         let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
+        \ 'colorscheme': 'gruvbox_material',
         \ 'active': {
         \  'left': [[ 'mode' ], [ 'fugitive' ], [ 'filename' ]],
         \  'right': [[ 'linenums' ], [ 'fileencoding', 'fileformat' ], [ 'filetype']]

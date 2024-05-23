@@ -29,34 +29,40 @@ You should also install [Iosevka](https://github.com/be5invis/Iosevka) fonts whi
 
 For the Win32-version of gvim you might want to copy `gvimfullscreen.dll` to `C:\Program Files\Vim\vim91` to be able to use F11 to go into borderless fullscreen. The copy bundled here (originally based on [this](https://github.com/leonid-shevtsov/gvimfullscreen_win32)) also fixes issues where the background color wouldn't match gruvbox.
 
-Features
---------
+Plugins
+-------
 
-* [Vundle](http://github.com/VundleVim/vundle): an awesome package manager.
-* [NERDTree](https://github.com/scrooloose/nerdtree): fast filesystem browser, see everything!
-* [TagBar](https://github.com/majutsushi/tagbar): painless navigation of tags (functions, classes etc...).
-* [Fugitive](https://github.com/tpope/vim-fugitive): easily one of the best Git integrators for Vim.
-* [Vim-Surround](https://github.com/tpope/vim-surround): enables one to manipulate e.g. (){}<> directly.
-* [GUndo](https://github.com/sjl/gundo.vim): graphical visualization of the Vim undo tree and diffs for them.
-* [VimCompletesMe](https://github.com/ajh17/VimCompletesMe): simple and lightweight built-in auto-completions.
-* [LightLine](https://github.com/itchyny/lightline.vim): minimal and lightweight statusline/tabline.
-* [Tabular](https://github.com/godlygeek/tabular): automatically tabulates (boring) stuff for you.
-* [Vim-Repeat](https://github.com/tpope/vim-repeat): extends vim's '.' operator usage.
-* [Vim-Commentary](https://github.com/tpope/vim-commentary): comment stuff out with gc.
-* [MatchIt](https://github.com/tmhedberg/matchit): operator '%' matches more stuff.
-* [Ack](https://github.com/mileszs/ack.vim): searches directory absurdingly fast.
-* [GruvBox](https://github.com/morhetz/gruvbox): very, extremely, pretty colors.
-* No overwritten vim bindings, all key mappings are bound to the leader key.
-* Sane defaults for vim: indents, no swap files, persistent undo tree etc...
+* [Vundle](VundleVim/Vundle.vim)
+* [vim-repeat](tpope/vim-repeat)
+* [vim-commentary](tpope/vim-commentary.git)
+* [vim-surround](tpope/vim-surround)
+* [tabular](godlygeek/tabular)
+* [nerdtree](scrooloose/nerdtree)
+* [tagbar](majutsushi/tagbar)
+* [vim-fugitive](tpope/vim-fugitive)
+* [matchit](tmhedberg/matchit)
+* [ack.vim](mileszs/ack.vim)
+* [gundo.vim](sjl/gundo.vim)
+* [VimCompletesMe](vim-scripts/VimCompletesMe)
+* [vim-dispatch](tpope/vim-dispatch)
+* [vim-vp4](ngemily/vim-vp4)
+* [lightline.vim](itchyny/lightline.vim)
+* [gruvbox](morhetz/gruvbox)
+* [gruvbox-material](sainnhe/gruvbox-material)
+* [rainbow](luochen1990/rainbow)
+* [hlsl.vim](beyondmarc/hlsl.vim)
+* [vim-glsl](CaffeineViking/vim-glsl)
+* [vim-spirv.git](kbenzie/vim-spirv.git)
+* [vim-pica200](CaffeineViking/vim-pica200)
 
 Bindings
 --------
 
-* Global leader key: `<space>`
-* Disable Highlight: `<ctrl>l`
-* Tabulate it baby!: `<leader>a`
-* Opens Ack search: `<leader>f`
-* Toggle NERDTree: `<leader>d`
-* Toggle TagBar: `<leader>s`
-* Toggle GUndo: `<leader>g`
-* Run "Make": `m<return>`
+* Default leader key: `<space>`
+* Clear highlighting: `<ctrl>l`
+* Align and tabulate: `<space>a`
+* Find with rg or ag: `<space>f`
+* Toggle NERDTree: `<space>d`
+* Toggle TagBar: `<space>s`
+* Toggle GUndo tree: `<space>g`
+* Trigger Makefile: `m<return>`

@@ -237,6 +237,12 @@
         \ }
 
         let g:rainbow_active = 1 " Enable rainbow brackets...
+        " Rainbow brackets conflict w/ HLSL!
+        let g:rainbow_conf['separately'] = {
+        \   'hlsl': {
+        \     'parentheses': ['start=/(/ end=/)/ fold', 'start=/^\@!\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+        \   }
+        \ }
     " }
 
     set list " Enables the characters to be displayed.

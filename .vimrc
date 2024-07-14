@@ -21,7 +21,7 @@
         Plugin 'tmhedberg/matchit' " The '%' now matches more k?
         Plugin 'mileszs/ack.vim' " Forget IDE searches gtg fast!
         Plugin 'sjl/gundo.vim' " Why only have linear undo tree?
-        Plugin 'vim-scripts/VimCompletesMe' " Fast autocomplete!
+        Plugin 'ervandew/supertab' " Use <Tab> for autocomplete.
         Plugin 'tpope/vim-dispatch' " When launching async jobs.
         Plugin 'ngemily/vim-vp4' " Minimal Perforce integration.
     " }
@@ -64,17 +64,6 @@
     set history=1024 " Defines the number of stored commands Vim can remember, doesn't really matter :).
 
     set belloff=all " Disable audio bell that constantly goes off in Windows version of gvim at least...
-" }
-
-" Autocompletions: { Basically, Vim's built-in auto-completions support with uniform keyboard shortcuts.
-    " We are using VimCompletesMe as the plugin of choice for making Vim's " built-in autocompletions be
-    " more uniformly handled with an single key: <Tab> and <Shift>-<Tab>. It will attempt to derive what
-    " the most suitable autocompletion function is to be called based on the context (omni, user etc...)
-    set omnifunc=syntaxcomplete#Complete " Enables only the default Vim auto-completion (quite fast!!!).
-    " The above autocompletion types will not call any external programs (it might however, call ctags).
-    set completeopt+=longest " Attempts to insert longest obviously current common match found so far.
-    set completeopt-=preview " Sometimes the [Scratch] preview window will pop-up. We don't want that.
-    let g:vcm_direction='p' " First choice should be the *closest* matching entry (as Bram intended).
 " }
 
 " Formatting: {

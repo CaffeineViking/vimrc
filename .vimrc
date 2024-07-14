@@ -47,23 +47,31 @@
 " }
 
 " General: {
-    set viminfo+=n~/.viminfo " Windows wants to use _viminfo >:(
-    set autowrite " Write automatically when :make, :next etc...
+    set viminfo+=n~/.viminfo " Windows wants to save _viminfo...
+    set autowrite " Save automatically when using :make / :next.
     set autoread " Reload file when it has been changed externally.
     set nobackup " No need for .bkp files when version control exist.
     set nowritebackup " If Vim crashes often then turn backups on again, look at docs for more information.
     set noswapfile " Don't create swap files, nowadays we should have enough memory to store a text file.
-    set complete-=i " Completion list for all included files is a bad idea, scanning could take a while.
     set sessionoptions-=options " Don't store options (global variables etc...) when making a session.
 
-    set undodir=~/.vim_undoes " Where do we store all this awesomeness?!?!
-    set undofile " Persistent undos are completely freaking awesome!!!
+    set undodir=~/.vim_undoes " Files with dots are supported in Windows too, no need for distinction.
+    set undofile " Enable persistent undo, this allows you to undo changes accross different sessions!
 
     let mapleader="\<Space>" " This vimrc frowns on overwritten vim bindings, I use the ',' quite a lot.
     let g:mapleader="\<Space>" " It is very rare to see Vim user use <Space> in normal mode, hence this.
     set history=1024 " Defines the number of stored commands Vim can remember, doesn't really matter :).
 
     set belloff=all " Disable audio bell that constantly goes off in Windows version of gvim at least...
+" }
+
+" Completion: {
+    set complete-=i " Don't search included files (it's slow).
+    set completeopt+=longest " Only autocomplete widest match.
+
+    " SuperTab:
+    let g:SuperTabLongestEnhanced=1 " Improve 'longest' match.
+    let g:SuperTabCrMapping=1 " <CR> accepts the autocomplete.
 " }
 
 " Formatting: {
@@ -73,7 +81,7 @@
     set tabstop=4 " This one is also needed to achieve the desired effect.
     set softtabstop=4 " Enables easy removal of an indentation level.
 
-    set autoindent " Automatically copy the previous indent level. Don't use smartindent!!!
+    set autoindent " Auto-magically copies the previous indentations.
     set backspace=2 " Used for making backspace work like in most other editors (e.g. removing a single indent).
     set wrap " Wrap text. This is also quite optional, replace with textwidth=80 is you don't want this behaviour.
     set lazyredraw " Good performance boost when executing macros, redraw the screen only on certain commands.
